@@ -4,6 +4,8 @@ import Navbar from "./components/navbar/Navbar";
 import Listingcars from "./components/listingCars/Listingcars";
 import BookingForm from "./components/listingCars/BookingForm";
 import carsData from "./components/listingCars/carsData";
+import Landingpage from "./components/landingpage/Landingpage";
+import Footer from "./components/footer/Footer";
 import { useState } from "react";
 function App() {
   const [cars_Data, setData] = useState(carsData);
