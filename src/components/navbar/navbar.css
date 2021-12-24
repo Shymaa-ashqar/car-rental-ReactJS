@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: white;
 }
 .logo-nav img {
   margin: auto 5em;
@@ -24,12 +24,13 @@
 }
 .nav-options ul li a {
   text-decoration: none;
-  color: white;
   font-weight: bold;
+  color: #18202d;
 }
 .nav-options ul li a:hover {
-  color: #ea0a0b;
-  transition: 0.4s;
+  color: #0aa5cd;
+  border-bottom: 2px solid #0aa5cd;
+  transition: 0.1s;
   transform: scale(1.2);
 }
 
@@ -46,11 +47,11 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:hover {
-  color: #ea0a0b;
+  color: #0aa5cd;
   transition: 0.4s;
 }
 .login-btn {
-  color: white;
+  color: black;
   text-decoration: none;
   border: 1px solid transparent;
   padding: 0.7rem 1.5rem;
@@ -60,7 +61,8 @@ nav ul li a:hover {
   font-size: 1rem;
 }
 .login-btn:hover {
-  background-color: rgb(153, 153, 153);
+  background-color: #0aa5cd;
+  color: white;
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -71,7 +73,7 @@ nav ul li a:hover {
   padding: 0.7rem 1.5rem;
   font-size: 1rem;
   border-radius: 20px;
-  background-color: #ea0a0b;
+  background-color: #192032;
   cursor: pointer;
 }
 .signup-btn:hover {
@@ -101,7 +103,7 @@ nav ul li a:hover {
     align-items: center;
   }
   .logo-nav img {
-    margin: 0;
+    margin: 0.5em;
   }
   .burger-menu {
     display: block;
@@ -115,7 +117,7 @@ nav ul li a:hover {
     transition: 0.3s;
   }
   .fa-bars {
-    color: white;
+    color: #18202d;
     font-size: 1.3rem;
   }
   .nav-options ul {

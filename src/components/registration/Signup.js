@@ -10,65 +10,65 @@ function Signup() {
     password: "",
     confPassword: "",
   });
-  const [formErrors, setFormErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confPassword: "",
-  });
-  const [isSubmit, setisSubmit] = useState(false);
+  //   const [formErrors, setFormErrors] = useState({
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     password: "",
+  //     confPassword: "",
+  //   });
+  //   const [isSubmit, setisSubmit] = useState(false);
 
   const register = (e) => {
     const { name, value } = e.target;
     setFormGrroup({ ...formGroup, [name]: value });
   };
-  const errors = {};
+  //   const errors = {};
   //   useEffect(() => {
   //     console.log(formErrors);
   //     if (Object.keys(formErrors).length === 0 && isSubmit) {
   //       console.log(formGroup);
   //     }
   //   }, [formErrors]);
-  const validate = (e) => {
-    alert("haneen");
-    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  //   const validate = (e) => {
+  //     alert("haneen");
+  //     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (!formGroup.firstName.length) {
-      setFormErrors(...formErrors, (firstName = "First Name can't be blank "));
-    } else if (formGroup.firstName.length <= 2) {
-      setFormErrors(...formErrors, (firstName = "First Name is to short"));
-    }
-    if (!formGroup.lastName.length) {
-      setFormErrors(...formErrors, (lastName = "Last Name can't be blank "));
-    } else if (formGroup.lastName.length <= 2) {
-      setFormErrors(...formErrors, (lastName = "LastName is to short"));
-    }
-    if (!formGroup.email) {
-      setFormErrors(...formErrors, (email = "Email can't be blank "));
-    } else if (!regex.test(formGroup.email)) {
-      setFormErrors.email(
-        ...(formErrors.email = "this Is not a valid format! ")
-      );
-    }
-    if (!formGroup.password) {
-      setFormErrors(...formErrors, (password = "Password can't be blank "));
-    } else if (formGroup.password.length <= 8) {
-      setFormErrors(
-        ...formErrors,
-        (password = "Password must be more than 8letters ")
-      );
-    }
-    if (formGroup.password == !formGroup.confPassword) {
-      setFormErrors(...formErrors, (confPassword = "password is not match"));
-    }
-    return errors;
-  };
+  //     if (!formGroup.firstName.length) {
+  //       setFormErrors(...formErrors, (firstName = "First Name can't be blank "));
+  //     } else if (formGroup.firstName.length <= 2) {
+  //       setFormErrors(...formErrors, (firstName = "First Name is to short"));
+  //     }
+  //     if (!formGroup.lastName.length) {
+  //       setFormErrors(...formErrors, (lastName = "Last Name can't be blank "));
+  //     } else if (formGroup.lastName.length <= 2) {
+  //       setFormErrors(...formErrors, (lastName = "LastName is to short"));
+  //     }
+  //     if (!formGroup.email) {
+  //       setFormErrors(...formErrors, (email = "Email can't be blank "));
+  //     } else if (!regex.test(formGroup.email)) {
+  //       setFormErrors.email(
+  //         ...(formErrors.email = "this Is not a valid format! ")
+  //       );
+  //     }
+  //     if (!formGroup.password) {
+  //       setFormErrors(...formErrors, (password = "Password can't be blank "));
+  //     } else if (formGroup.password.length <= 8) {
+  //       setFormErrors(
+  //         ...formErrors,
+  //         (password = "Password must be more than 8letters ")
+  //       );
+  //     }
+  //     if (formGroup.password == !formGroup.confPassword) {
+  //       setFormErrors(...formErrors, (confPassword = "password is not match"));
+  //     }
+  //     return errors;
+  //   };
 
   const reg = (e) => {
     e.preventDefault();
-    setFormErrors(validate(formGroup));
-    setisSubmit(true);
+    // setFormErrors(validate(formGroup));
+    // setisSubmit(true);
     let users = {
       fName: formGroup.firstName,
       lName: formGroup.lastName,
@@ -100,7 +100,7 @@ function Signup() {
   return (
     <section className="Register" id="Register">
       {/* {Object.keys(formErrors).length === 0 && isSubmit ? (<div className="ui Message success">Signed in successful</div>:)} */}
-      <div className="container">
+      <div className="Register-container">
         <div className="d-flex justify-content-center h-100">
           <div className="card2">
             <div className="card-header">
@@ -125,7 +125,7 @@ function Signup() {
                     required
                   />
                 </div>{" "}
-                <small className="errorMsg">{formErrors.firstName}</small>
+                {/* <small className="errorMsg">{formErrors.firstName}</small> */}
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text">
@@ -143,7 +143,7 @@ function Signup() {
                     required
                   />
                 </div>{" "}
-                <small className="errorMsg">{formErrors.lastName}</small>
+                {/* <small className="errorMsg">{formErrors.lastName}</small> */}
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text">
@@ -161,7 +161,7 @@ function Signup() {
                     onChange={register}
                   />{" "}
                 </div>
-                <small className="errorMsg">{formErrors.email}</small>
+                {/* <small className="errorMsg">{formErrors.email}</small> */}
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text">
@@ -180,7 +180,7 @@ function Signup() {
                     // pattern="^[A-Za-z0-9]{9,16}$"
                   />{" "}
                 </div>{" "}
-                <small className="errorMsg">{formErrors.password}</small>
+                {/* <small className="errorMsg">{formErrors.password}</small> */}
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text">
@@ -198,7 +198,7 @@ function Signup() {
                     required
                   />{" "}
                 </div>
-                <small className="errorMsg">{formErrors.confPassword}</small>
+                {/* <small className="errorMsg">{formErrors.confPassword}</small> */}
                 <div className="form-group">
                   <input
                     type="submit"

@@ -14,7 +14,7 @@
   font-family: "Numans", sans-serif;
 }
 
-.card {
+.card1 {
   height: 350px;
   margin-top: auto;
   margin-bottom: auto;
@@ -75,7 +75,7 @@ input:focus {
   }
 }
 @media only screen and (max-width: 375px) {
-  .card {
+  .card1 {
     width: 100%;
     height: auto;
     margin-right: 1em;
