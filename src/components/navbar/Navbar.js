@@ -60,7 +60,7 @@ function Navbar({ submitted, logged, setLogged, setSubmitted }) {
           </li>
           <li>
             {!submitted ? (
-              <Link to="/signup">
+              <Link to="/Signup">
                 <button className="signup-btn">Signup</button>
               </Link>
             ) : null}

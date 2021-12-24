@@ -1,0 +1,140 @@
+.Register {
+  height: 100vh !important;
+  background-image: linear-gradient(
+      rgba(81, 192, 243, 0.5),
+      rgb(255, 255, 255, 0.63)
+    ),
+    url("../../../public/page-header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  font-family: "Numans", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 6em;
+  padding-left: 2em;
+  height: 100%;
+  align-content: center;
+}
+
+.card2 {
+  height: 500px;
+  border-radius: 55px;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.social_icon span {
+  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
+  font-size: 60px;
+  margin-left: 10px;
+  color: #0aa5cd;
+}
+
+.social_icon span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.card-header h3 {
+  color: white;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #0aa5cd;
+  color: white;
+  border: 0 !important;
+  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.login_btn {
+  color: black;
+  background-color: #0aa5cd;
+  width: 100px;
+  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
+}
+
+.login_btn:hover {
+  color: black;
+  background-color: white;
+}
+
+.links {
+  color: white;
+}
+
+.links a {
+  margin-left: 20px;
+  color: #0aa5cd;
+}
+.fas,
+.far {
+  margin-left: 1em;
+  font-size: 1em;
+}
+.errorMsg {
+  color: red;
+  font-size: 15px;
+  padding: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  display: none;
+  width: 20em;
+}
+.form-control:invalid {
+  border-color: red;
+}
+.form-control:invalid ~ .errorMsg {
+  display: block;
+}
+.form-control {
+  width: 20em !important;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 580px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .card2 {
+    width: 25em;
+    padding-left: 2em;
+    margin-left: 2em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .card2 {
+    width: 20em;
+    padding-left: 1em;
+    margin-left: 1em;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .card2 {
+    width: 15em;
+    height: 35em;
+    padding-left: 1em;
+    margin-left: 1em;
+  }
+}
+@media only screen and (max-width: 285px) {
+  .card2 {
+    width: 13em;
+  }
+  .container {
+    display: flex;
+    justify-content: flex-start;
+  }
+}

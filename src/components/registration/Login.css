@@ -1,0 +1,104 @@
+.logIn {
+  height: 100vh;
+  padding-top: 6em;
+  padding-left: 2em;
+
+  background-image: linear-gradient(
+      rgba(81, 192, 243, 0.5),
+      rgb(255, 255, 255, 0.63)
+    ),
+    url("../../../public/page-header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  font-family: "Numans", sans-serif;
+}
+
+.card {
+  height: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 55px;
+}
+
+.card-header h3 {
+  color: #0aa5cd !important;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #0aa5cd;
+  color: white;
+  border: 0 !important;
+  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+  color: #0aa5cd;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.links {
+  color: white;
+}
+
+.links a {
+  margin-left: 4px;
+  color: #0aa5cd;
+}
+@media only screen and (max-width: 900px) {
+  .Home {
+    height: 60em;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .card {
+    width: 100%;
+    margin-right: 1em;
+  }
+  .social_icon {
+    right: 8px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .card {
+    width: 100%;
+    height: auto;
+    margin-right: 1em;
+  }
+  .fab:before {
+    font-size: 0.7em;
+  }
+
+  .card-header h3 {
+    margin-top: 1em;
+  }
+  .remember,
+  .remember input {
+    padding-bottom: 1em;
+  }
+  .input-group > .form-control:not(:first-child) {
+    font-size: 0.8em;
+  }
+  .links {
+    font-size: 1em;
+  }
+  .links a {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+  }
+}
