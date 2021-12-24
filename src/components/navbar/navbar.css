@@ -1,0 +1,132 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+.logo-nav img {
+  margin: auto 5em;
+  width: 6em;
+}
+.burger-menu {
+  display: none;
+}
+.nav-options ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav-options ul #hidden {
+  display: flex;
+  list-style-type: none;
+}
+.nav-options ul li {
+  padding: 1em;
+}
+.nav-options ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.nav-options ul li a:hover {
+  color: #ea0a0b;
+  transition: 0.4s;
+  transform: scale(1.2);
+}
+
+.register-btn ul {
+  display: flex;
+  list-style-type: none;
+}
+.register-btn ul li {
+  padding: 0.5em;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  color: #ea0a0b;
+  transition: 0.4s;
+}
+.login-btn {
+  color: white;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.login-btn:hover {
+  background-color: rgb(153, 153, 153);
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+.signup-btn {
+  color: white;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: #ea0a0b;
+  cursor: pointer;
+}
+.signup-btn:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .logo-nav img {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo-nav {
+    display: flex;
+    align-items: center;
+  }
+  .logo-nav img {
+    margin: 0;
+  }
+  .burger-menu {
+    display: block;
+    margin-left: 11em;
+    border: none;
+    background: none;
+  }
+
+  .burger-menu:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+  .fa-bars {
+    color: white;
+    font-size: 1.3rem;
+  }
+  .nav-options ul {
+    display: none;
+  }
+
+  .nav-options #hidden {
+    display: flex;
+    flex-direction: column;
+  }
+  .register-btn {
+    display: none;
+  }
+}
