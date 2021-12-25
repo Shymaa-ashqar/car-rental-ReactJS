@@ -11,6 +11,8 @@ import Landingpage from "./components/landingpage/Landingpage";
 import Footer from "./components/footer/Footer";
 import { useState } from "react";
 function App() {
+  const [logged, setLogged] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [cars_Data, setData] = useState(carsData);
   return (
     <div className="App">
@@ -32,8 +34,11 @@ function App() {
             path="/bookingForm/:id"
             element={<BookingForm cars={cars_Data} />}
           />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/Login" element={<Login setLogged={setLogged} />} />
+          <Route
+            path="/signup"
+            element={<Signup setSubmitted={setSubmitted} />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

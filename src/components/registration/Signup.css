@@ -21,26 +21,14 @@
 }
 
 .card2 {
-  height: 500px;
+  height: 600px;
   border-radius: 55px;
   width: 500px;
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.social_icon span {
-  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
-  font-size: 60px;
-  margin-left: 10px;
-  color: #0aa5cd;
-}
-
-.social_icon span:hover {
-  color: white;
-  cursor: pointer;
-}
-
 .card-header h3 {
-  color: white;
+  padding: 1em;
 }
 
 .input-group-prepend span {
@@ -57,15 +45,17 @@ input:focus {
 }
 
 .login_btn {
-  color: black;
-  background-color: #0aa5cd;
+  color: white;
+  background-color: #192032 !important;
   width: 100px;
   /* border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%; */
 }
 
 .login_btn:hover {
-  color: black;
+  color: white;
   background-color: white;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .links {
@@ -85,9 +75,9 @@ input:focus {
   color: red;
   font-size: 15px;
   padding: 1em;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-  display: none;
+  /* margin-bottom: 1em;
+  padding-bottom: 1em; */
+
   width: 20em;
 }
 .form-control:invalid {
