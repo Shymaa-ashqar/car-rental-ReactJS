@@ -13,11 +13,11 @@ const Testimonials = ({ src, title, des }) => {
               <p>{des}</p>
               <h6>{title}</h6>
               <div className="testimonoals-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
               </div>
             </div>
           </div>

@@ -9,20 +9,25 @@ import Signup from "./components/registration/Signup";
 import Login from "./components/registration/Login";
 import Landingpage from "./components/landingpage/Landingpage";
 import Footer from "./components/footer/Footer";
-import { useState } from "react";
 import Aboutus from "./components/aboutUs/Aboutus";
+import { useState } from "react";
 function App() {
+  const [logged, setLogged] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [cars_Data, setData] = useState(carsData);
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <Navbar
+          logged={logged}
+          setLogged={setLogged}
+          submitted={submitted}
+          setSubmitted={setSubmitted}
+        />
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/aboutus" element={<Aboutus />} />
-          <Route path="/listingcars" element={<Listingcars />} />
-
           <Route
             path="/listingcars"
             element={<Listingcars cars={cars_Data} />}
@@ -31,8 +36,11 @@ function App() {
             path="/bookingForm/:id"
             element={<BookingForm cars={cars_Data} />}
           />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/Login" element={<Login setLogged={setLogged} />} />
+          <Route
+            path="/signup"
+            element={<Signup setSubmitted={setSubmitted} />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

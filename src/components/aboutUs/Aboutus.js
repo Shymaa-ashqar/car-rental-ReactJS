@@ -19,7 +19,7 @@ const Aboutus = () => {
             in iis qui facit eorum claritatem. Investigationes demonstraverunt
             lectores legere me lius quod ii legunt saepius.
           </p>
-          <Link to="/">
+          <Link to="/listingcars">
             <button>Discover More</button>
           </Link>
         </div>
