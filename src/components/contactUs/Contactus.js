@@ -6,23 +6,53 @@ import '../contactUs/Contactus.css'
 function ContactUs() {
 
 let obj={fName:"",
-lName:"",Email:""}
+lName:"",Email:"",Flag:"false"}
 
 let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStorage.getItem("logged_user")):obj;
+// const [formErrors, setFormErrors] = useState({});
 
     const [formInfo, setFormInfo] = useState(
         
             logged  
     );
      
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormInfo({ ...formInfo, [name]: value });
+    const handleChange = (e, attr) => {
+        setFormInfo({ ...formInfo, [attr]: e.target.value });
+        console.log(formInfo);
       };
 
 
+
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormInfo({ ...formInfo, [name]: value });
+    //   };
+
+    //   const validate = (values) => {
+        
+    //     const errors = {};
+    //     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    //     if (!values.fName) {
+    //       errors.fName = "First Name is required!";
+    //     } else if (values.fName.length <= 2) {
+    //       console.log("ha");
+    //       errors.fName = "First Name is too short!";
+    //     }
+    //     if (!values.lName) {
+    //       errors.lName = "Last Name is required!";
+    //     } else if (values.lName.length <= 2) {
+    //       errors.lName = "Last Name is too short!";
+    //     }
+    //     if (!values.email) {
+    //       errors.email = "Email is required!";
+    //     } else if (!regex.test(values.email)) {
+    //       errors.email = "This is not a valid email format!";
+    //     }}
+    
+
      const checkConsults=(e)=>{
+
+        // setFormErrors(validate(formInfo));
      
          e.preventDefault();
 
@@ -53,6 +83,7 @@ let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStora
      
      }
 
+
     }
   
     return (
@@ -66,7 +97,9 @@ let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStora
 
           <input
             value={formInfo.fName}
-            onChange={handleChange}
+            onChange={(e) => {
+                handleChange(e, "fName");
+              }}
             name="fName"
             className="contactInput"
             type={"text"}
@@ -74,17 +107,21 @@ let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStora
             placeholder="  First Name"
             required
           ></input> 
+          {formInfo.fName.length<=2 && formInfo.fName.length>0?<small className='errorMessage1'>User name must be more than 2</small>:""}
          
           <input
             name="lName"
             value={formInfo.lName}
-            onChange={handleChange}
+            onChange={(e) => {
+                handleChange(e, "lName");
+              }}
             className="contactInput"
             type={"text"}
             id="lastName"
             placeholder="  Last Name"
             required
           ></input>
+           {formInfo.lName.length<=2 && formInfo.lName.length>0?<small className='errorMessage1'>User name must be more than 2</small>:""}
         
           
           <input
@@ -106,7 +143,7 @@ let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStora
             className="contactInput"
             type={"telephone"}
             id="Phone"
-            placeholder="+962"
+            placeholder="Enter your mobile number"
             required
           ></input>
          
@@ -129,7 +166,7 @@ let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStora
             className="contactInput"
             type={"text"}
             id="message"
-            placeholder="Start typing"
+            placeholder="Type your message"
             
           ></input>
          
@@ -138,8 +175,8 @@ let logged=JSON.parse(localStorage.getItem("logged_user"))?JSON.parse(localStora
         <div className='contactDetails'>
 <ul id="contactDetails">
  <a   href="#" class="fas fa-phone-alt">  +962798452640</a>
- <a  href="#"class="fas fa-map-marker-alt">  Our location</a>
- <a href="#"class="fas fa-envelope">  Email</a>
+ <a  href="https://maps.google.com" targrt="_blank" class="fas fa-map-marker-alt">  Our location</a>
+ <a href="https://www.google.com" target="_blank" class="fas fa-envelope">   Email</a>
 
 
 </ul>
