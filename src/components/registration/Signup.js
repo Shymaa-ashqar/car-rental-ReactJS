@@ -29,6 +29,7 @@ function Signup({ setSubmitted }) {
   //   }, [formErrors]);
   let isValidate;
   const validate =   (e, values) => {
+    e.preventDefault();
     console.log("hanee");
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -54,13 +55,12 @@ function Signup({ setSubmitted }) {
       values.confPassword === values.password
     ) {
       isValidate=true
-       console.log(Isvalidate)
        reg(e,errors);
     }
 
   };
 
-  const reg =  (e,errors) => {
+  const reg = (e,errors) => {
     e.preventDefault();
     setFormErrors(errors);
     let users = {
