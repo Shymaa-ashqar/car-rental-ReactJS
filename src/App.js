@@ -36,10 +36,17 @@ function App() {
             path="/bookingForm/:id"
             element={<BookingForm cars={cars_Data} />}
           />
-          <Route path="/Login" element={<Login setLogged={setLogged} />} />
+          <Route
+            path="/Login"
+            element={
+              <Login setLogged={setLogged} setSubmitted={setSubmitted} />
+            }
+          />
           <Route
             path="/signup"
-            element={<Signup setSubmitted={setSubmitted} />}
+            element={
+              <Signup setSubmitted={setSubmitted} setLogged={setLogged} />
+            }
           />
         </Routes>
         <Footer />

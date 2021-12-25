@@ -85,6 +85,20 @@ nav ul li a:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
+.logout-btn-header {
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: #192032;
+  cursor: pointer;
+}
+.logout-btn-header:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
 @media screen and (max-width: 768px) {
   .navbar {
     display: flex;

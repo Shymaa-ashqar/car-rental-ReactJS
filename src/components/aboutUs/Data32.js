@@ -1,13 +1,13 @@
 const data32 = [
   {
     id: 24,
-    src: "./abdallah3.jpg",
+    src: "./shaymaa21.jpg",
     name: "Shaymaa",
     position: "front-end developer",
   },
   {
     id: 25,
-    src: "./beshir-profile.jpeg",
+    src: "./beshir-profile1.jpg",
     name: "Beshir",
     position: "front-end developer",
   },

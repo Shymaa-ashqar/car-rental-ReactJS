@@ -1,13 +1,13 @@
 const data3 = [
   {
     id: 21,
-    src: "./zaid1.jpg",
+    src: "./kholoud123.jpg",
     name: "Kholoud",
     position: "front-end developer",
   },
   {
     id: 22,
-    src: "./zaid1.jpg",
+    src: "./sanad1.jpg",
     name: "Sanad",
     position: "front-end developer",
   },

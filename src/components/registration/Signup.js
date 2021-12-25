@@ -3,7 +3,7 @@ import "./Signup.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function Signup({ setSubmitted }) {
+function Signup({ setSubmitted, setLogged }) {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
   // const [isSubmit, setIsSubmit] = useState(false);
@@ -29,6 +29,8 @@ function Signup({ setSubmitted }) {
   //   }, [formErrors]);
   let isValidate;
   const validate = (e, values) => {
+    e.preventDefault();
+
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (values.firstName.length <= 2) {
@@ -45,7 +47,9 @@ function Signup({ setSubmitted }) {
     }
     if (values.confPassword !== values.password) {
       errors.confPassword = "Password is not match";
-    } else if (
+    }
+    setFormErrors(errors);
+    if (
       values.firstName.length > 2 &&
       values.lastName.length > 2 &&
       regex.test(values.email) &&
@@ -53,14 +57,13 @@ function Signup({ setSubmitted }) {
       values.confPassword === values.password
     ) {
       isValidate = true;
-      console.log(Isvalidate);
       reg(e, errors);
     }
   };
 
   const reg = (e, errors) => {
     e.preventDefault();
-    setFormErrors(errors);
+    console.log(errors);
     let users = {
       fName: formGroup.firstName,
       lName: formGroup.lastName,
@@ -86,6 +89,7 @@ function Signup({ setSubmitted }) {
         localStorage.setItem("users", JSON.stringify(arr));
         // setIsSubmit(!isSubmit);
         setSubmitted(true);
+        setLogged(true);
         navigate("/");
       }
     } else if (isValidate === true) {
@@ -93,6 +97,7 @@ function Signup({ setSubmitted }) {
       //   setIsSubmit(!isSubmit);
       localStorage.setItem("users", JSON.stringify(arr));
       setSubmitted(true);
+      setLogged(true);
       navigate("/");
     }
   };

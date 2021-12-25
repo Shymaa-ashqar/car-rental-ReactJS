@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
-function Login({setLogged}) {
+function Login({ setLogged, setSubmitted }) {
   const navigate = useNavigate();
   //   const [formErrors, setFormErrors] = useState({});
   const [formGroup, setFormGrroup] = useState({
@@ -48,7 +48,8 @@ function Login({setLogged}) {
       ) {
         index = i;
         localStorage.setItem("logged_user", JSON.stringify(Userss[index]));
-           setLogged(true)
+        setLogged(true);
+        setSubmitted(true);
         navigate("/");
 
         return (flag = false);

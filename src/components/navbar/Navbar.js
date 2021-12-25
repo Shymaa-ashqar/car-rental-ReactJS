@@ -53,6 +53,7 @@ function Header({ submitted, setSubmitted, logged, setLogged }) {
                   onClick={() => {
                     setSubmitted(false);
                     setLogged(false);
+                    localStorage.removeItem("logged_user");
                   }}
                 >
                   Logout
