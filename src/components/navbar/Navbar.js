@@ -9,7 +9,7 @@ function Navbar({ submitted, logged, setLogged, setSubmitted }) {
       <div className="logo-nav">
         <Link to="/">
           {" "}
-          <img src="" alt="logo" />
+          <img src="./car-rent-logo.png" alt="logo" />
         </Link>
         <button className="burger-menu" onClick={() => setShowNav(!showNav)}>
           <i className="fas fa-bars"></i>
@@ -60,7 +60,7 @@ function Navbar({ submitted, logged, setLogged, setSubmitted }) {
           </li>
           <li>
             {!submitted ? (
-              <Link to="/signup">
+              <Link to="/Signup">
                 <button className="signup-btn">Signup</button>
               </Link>
             ) : null}

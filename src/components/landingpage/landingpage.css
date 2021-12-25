@@ -1,0 +1,202 @@
+/* ///////////////////////////////////////////slider styling  */
+
+.ladingpage-slider .carousel-inner img {
+  height: 80vh !important;
+  opacity: 0.5;
+}
+
+.ladingpage-slider-container-btn p {
+  font-size: 4rem;
+  position: absolute;
+  z-index: 99;
+  top: 40%;
+  left: 30%;
+  color: #192032;
+  font-weight: bold;
+}
+.ladingpage-slider-container-btn button {
+  position: absolute;
+  z-index: 99;
+  top: 55%;
+  left: 40%;
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 0.7rem 6rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: #192032;
+  cursor: pointer;
+}
+.ladingpage-slider-container-btn button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+/*//////////////////////////////////////////////// explore styling  */
+.landingpage-explore {
+  background-color: #fafbfc;
+  padding: 2em;
+}
+.landingpage-explore h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #0aa5cd;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid;
+  width: 40%;
+  align-items: center;
+  margin: 2em auto;
+  padding-bottom: 0.5em;
+}
+.landingpage-explore-cars {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* ///////////////////////////////////////////////////about styling  */
+.landingpage-about {
+  display: flex;
+  margin: 2em;
+  background-color: #fafbfc;
+  padding: 2em;
+}
+.landingpage-about-img {
+  flex: 40%;
+}
+.landingpage-about-img img {
+  width: 100%;
+}
+.landingpage-about-text {
+  flex: 50%;
+  padding-left: 3em;
+  text-align: center;
+  margin-top: 5em;
+}
+.landingpage-about-text h3 {
+  font-weight: bold;
+  color: #0aa5cd;
+}
+/* //////////////////////////////////////////card styling  */
+.card .btn {
+  background-color: #192032 !important;
+  border: none;
+}
+/*/////////////////////////////////////////// testimonials styling */
+.testimonials {
+  padding: 1em 0;
+}
+.testimonials-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.testimonials-top,
+.testimonials-body {
+  padding: 0 1rem;
+}
+
+.testimonials-item img {
+  width: 9.375em;
+  height: 9.375em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  z-index: 99;
+}
+.testimonials-info {
+  background-color: #fff;
+  padding: 5.5rem 2rem 2rem 2rem;
+  margin-top: -7em;
+  box-shadow: rgba(0, 0, 0, 0.15);
+}
+.testimonials-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+.testimonials-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.testimonials-info p {
+  color: #7c8595;
+  font-style: italic;
+  line-height: 1.5rem;
+  text-align: center;
+}
+.testimonials-info h6 {
+  color: black;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.testimonoals-rating {
+  text-align: center;
+  color: #fdcc28;
+}
+.landingpage-Testimonials {
+  background-color: #fafbfc;
+  padding-top: 2em;
+}
+.landingpage-Testimonials-cards {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  margin: 2em;
+}
+.landingpage-Testimonials h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #0aa5cd;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 12em !important  ;
+  }
+}
+@media screen and (max-width: 420px) {
+  .ladingpage-slider .carousel-inner img {
+    height: 60vh !important;
+  }
+  .ladingpage-slider-container-btn p {
+    font-size: 3rem;
+    top: 20%;
+    left: 20%;
+  }
+  .ladingpage-slider-container-btn button {
+    position: absolute;
+    z-index: 99;
+    top: 43%;
+    left: 18%;
+    padding: 0.7rem 5rem;
+  }
+  .landingpage-explore-cars {
+    display: flex;
+    flex-direction: column;
+  }
+  .landingpage-explore h3 {
+    width: 100%;
+  }
+  .landingpage-about {
+    display: flex;
+    flex-direction: column;
+  }
+  .landingpage-about-text {
+    padding-left: 0em;
+  }
+
+  .card {
+    margin-bottom: 1em;
+    width: 20em !important  ;
+  }
+  .landingpage-Testimonials-cards {
+    display: flex;
+    flex-direction: column;
+  }
+}

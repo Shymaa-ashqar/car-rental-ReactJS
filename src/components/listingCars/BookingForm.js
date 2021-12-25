@@ -1,17 +1,32 @@
-import React, {useState, useEffect, useNavigate} from 'react'
-import { useParams } from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
+import carsData from "./carsData"
 
 
 function BookingForm() {
 
     
 
-    // let {ida} = useParams(id);
-    let ida = 4;
+    let {id} = useParams();
+    
 
     if(!localStorage.getItem("reservations"))
     localStorage.setItem("reservations",JSON.stringify([]));
 
+    let [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('logged_user')))
+
+    const handleInputChange =(e) =>{
+        const {id, value}= e.target
+        
+        setUserInfo({...userInfo, [id] :value})
+    }
+
+    let ppd;
+    for(let obj of carsData ){
+        if (obj.id == id){
+            ppd = obj.price;
+        }
+    }
 
 
 
@@ -22,15 +37,15 @@ function BookingForm() {
         let found;
         let starting;
         let indx;
-        let hrs
+        let hrs;
         for(let i in lcl)
-           if(lcl[i].id == ida)
+           if(lcl[i].id == id)
             {
                 indx = i;
                 let starting1 = (new Date(lcl[i].end));
                 let mid = starting1.getDate()
                 starting1.setDate(mid+1)
-                console.log(starting1);
+                
                 let start = starting1.toISOString()
                 starting = start.substring(0,10)
                 found = true;
@@ -71,28 +86,27 @@ function BookingForm() {
     const handleDateChange2 = (e) =>{
         setValueCut2(e.target.value)
     }
+    const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault()
-        const navigate = useNavigate();
+        
             let lclArr = JSON.parse(localStorage.getItem("reservations"));
-            console.log(lclArr);
+            
         let reservation = {
-            id : 4,
-            fname : e.target.fname.value,
-            lname : e.target.lname.value,
-            email : e.target.mail.value,
+            id : id,
+            ...userInfo,
             tel : e.target.tel.value,
             start : valueCut,
             end : valueCut2,
             hour : e.target.hours.value
         }
         lclArr.push(reservation);
-        console.log(reservation);
+        
         localStorage.setItem("reservations",JSON.stringify(lclArr));
         // navigate('/listingcars');
     }
 
-    console.log()
+    let duration = ((new Date(valueCut2)).getTime() - (new Date(valueCut)).getTime())/86400000;
 
 
     return (
@@ -100,12 +114,12 @@ function BookingForm() {
             <form className="form" onSubmit={(e)=>handleSubmit(e)}>
                 <div className="textsCont">
                     <div className='texts' id="texts1">
-                        <input required placeholder='First Name' type="text" name="fname" id="fname" />
-                        <input required placeholder='Last Name' type="text" name="lname" id="lname" />
+                        <input onChange = {(e)=>handleInputChange(e)} value={userInfo.fName} required placeholder='First Name' type="text" name="fName" id="fName" />
+                        <input onChange = {(e)=>handleInputChange(e)} value={userInfo.lName} required placeholder='Last Name' type="text" name="lName" id="lName" />
                     </div>
                     <div className='texts' id="texts2">
-                        <input required placeholder='Email' type="email" name="mail" id="mail" />
-                        <input required placeholder='Mobile Number' type="tel" name="tel" id="tel" />
+                        <input value={userInfo.email} required placeholder='Email' type="email" name="email" id="email" />
+                        <input type="tel" pattern="[0-9]{10}" required placeholder='Mobile Number'  name="tel" id="tel" />
                     </div>
                 </div>
             <div className="dates">
@@ -115,14 +129,14 @@ function BookingForm() {
             </>
                 }
                 <input onChange={(e)=>handleDateChange(e)} value={valueCut} type="date"  name="start" min={found?starting:valueCut1}/>
-                <input onChange={(e)=>handleDateChange2(e)} value={valueCut2} type="date"  name="end"/>
+                <input onChange={(e)=>handleDateChange2(e)} min={valueCut2} value={valueCut2} type="date"  name="end"/>
                 <input required type="time" name="hours" />
 
 
             </div>
             <div className="total">
-                <p className="state">{((new Date(valueCut2)).getTime() - (new Date(valueCut)).getTime())/86400000} Days</p>
-                <p>Total : JOD</p>
+                <p className="state">{duration} Days</p>
+                <p>Total :{duration*ppd}  JOD</p>
 
             </div>
             <div className="submit">

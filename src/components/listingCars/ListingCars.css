@@ -1,0 +1,109 @@
+.Car-list-container .background {
+  background-image: url("https://autozone.templines.org/dealer/wp-content/themes/autozone/images/page-img.jpg");
+  height: 20em;
+}
+.Car-list-container .background div {
+  background: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  height: 100%;
+  z-index: 2;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.Car-list-container .cars {
+  background-color: #f0f4f5;
+}
+.Car-list-container .search-sort input,
+.Car-list-container .search-sort select {
+  padding: 5px 10px !important;
+  border: rgb(172, 171, 171) 1px solid;
+  color: gray;
+  border-radius: 0.3em;
+}
+.Car-list-container .search-sort input::placeholder {
+  color: gray;
+}
+.search-sort {
+  display: flex;
+}
+.car-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.car-item .car-container {
+  display: flex;
+  margin: 1em 0;
+  flex-direction: row;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.car-item .car-container img {
+  width: 100%;
+  height: 15em;
+}
+.car-container .text {
+  background-color: white;
+  padding: 2em;
+  width: 35vw;
+  height: 15em;
+  overflow: hidden;
+}
+.car-container .text h3 {
+  font-size: 1.2em;
+}
+.car-container .text .price {
+  color: gray;
+}
+.car-container .text .price span {
+  color: #0aa5cd;
+  font-weight: bolder;
+  font-size: 1.1em;
+}
+.car-item .btn {
+  border: none;
+  outline: none !important;
+  background-color: #0aa5cd;
+  color: white;
+  font-size: 14px;
+  padding: 5px 12px;
+  transition: 500ms;
+  border-radius: 5px;
+}
+.car-item .btn:hover {
+  background-color: white;
+  border: 1px solid #0aa5cd;
+  color: #0aa5cd;
+}
+.car-item .info {
+  margin-top: 2em;
+}
+.car-item .info i {
+  color: #0aa5cd;
+}
+.car-item .info span {
+  color: rgb(145, 144, 144);
+  padding-right: 0.5em;
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 640px) {
+  .car-item .car-container {
+    flex-direction: column !important;
+    box-shadow: none !important;
+    overflow: hidden;
+  }
+  .car-item .car-container img {
+    padding: 0 1em;
+  }
+  .search-sort {
+    flex-direction: column !important;
+  }
+  .car-container .text {
+    width: 100vw;
+  }
+}
