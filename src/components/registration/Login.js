@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
-function Login() {
+function Login({setLogged}) {
   const navigate = useNavigate();
-
+  //   const [formErrors, setFormErrors] = useState({});
   const [formGroup, setFormGrroup] = useState({
     email: "",
     password: "",
@@ -14,9 +14,29 @@ function Login() {
     const { name, value } = e.target;
     setFormGrroup({ ...formGroup, [name]: value });
   };
+  //   const errors = {};
+  //   const validate = (values) => {
+  //     console.log("hanee");
+
+  //     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+  //     if (!values.email) {
+  //       errors.email = "Email is required!";
+  //     } else if (!regex.test(values.email)) {
+  //       errors.email = "This is not a valid email format!";
+  //     }
+  //     if (!values.password) {
+  //       errors.password = "Password is required";
+  //     } else if (values.password.length < 8) {
+  //       errors.password = "Password must be more than 8 characters";
+  //     }
+
+  //     return errors;
+  //   };
 
   const onSubmit = (e) => {
     e.preventDefault();
+    // setFormErrors(validate(formGroup));
     let index;
     let flag = true;
     let Userss = [];
@@ -26,18 +46,17 @@ function Login() {
         formGroup.email === Userss[i].email &&
         formGroup.password === Userss[i].password
       ) {
-        alert("Thank You ...You Can Go ");
         index = i;
         localStorage.setItem("logged_user", JSON.stringify(Userss[index]));
-
+           setLogged(true)
         navigate("/");
 
         return (flag = false);
       }
     }
     if (flag === true) {
-      alert("you Need to sign up ");
-      navigate("/SignUp");
+      alert("your Password Or Email is not correct ");
+      //   navigate("/SignUp");
     }
   };
 
@@ -64,6 +83,7 @@ function Login() {
                   onChange={Change}
                 />
               </div>
+              {/* <small className="errorMsg">{formErrors.email}</small> */}
               <div className="input-group form-group">
                 <div className="input-group-prepend">
                   <span className="input-group-text">
@@ -78,10 +98,8 @@ function Login() {
                   onChange={Change}
                 />
               </div>
-              <div className="row align-items-center remember">
-                <input type="checkbox" />
-                Remember Me
-              </div>
+              {/* <small className="errorMsg">{formErrors.confPassword}</small> */}
+
               <div className="form-group">
                 <input
                   type="submit"
