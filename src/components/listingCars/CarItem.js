@@ -26,6 +26,18 @@ function CarItem(props) {
           >
             Book Now
           </button>
+          <div className="info">
+            <i class="fas fa-caret-right "></i>
+            <span> 2 Seats</span>
+            <i class="fas fa-caret-right "></i>
+            <span> 2 Bags</span>
+            <i class="fas fa-caret-right "></i>
+            <span> Airbags</span>
+            <i class="fas fa-caret-right"></i>
+            <span> Manual/Auto</span>
+            <i class="fas fa-caret-right "></i>
+            <span> AC</span>
+          </div>
         </div>
       </div>
     </div>

@@ -1,25 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CarItem from "./CarItem";
 import "./ListingCars.css";
 
 function Listingcars(props) {
   const [search, setSearch] = useState(null);
   const [data, setData] = useState(props.cars);
+  const [sortValue, setSortValue] = useState("");
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
   const handleSort = (e) => {
-    console.log(e.target.value);
     if (e.target.value == "low") {
+      setSortValue("low");
       setData(
         data.sort(function (a, b) {
           return a.price - b.price;
         })
       );
     } else if (e.target.value == "high") {
+      setSortValue("high");
       setData(
         data.sort(function (a, b) {
           return b.price - a.price;
+        })
+      );
+    } else if (e.target.value == "All") {
+      setSortValue("All");
+      setData(
+        data.sort(function (a, b) {
+          return a.id - b.id;
         })
       );
     }
@@ -33,8 +42,8 @@ function Listingcars(props) {
           <h1>Vehicle Model </h1>
         </div>
       </div>
-      <div className="cars mt-5">
-        <div className="search-sort p-5">
+      <div className="cars pt-5">
+        <div className="search-sort p-5 container mb-5">
           <input
             type="text"
             placeholder="Search ..."
