@@ -71,7 +71,7 @@ function ContactUs() {
             ></input>
             {formInfo.fName.length <= 4 && formInfo.fName.length > 0 ? (
               <small className="errorMessage1">
-                User name must be more than 2
+                User name must be more than 4
               </small>
             ) : (
               ""
@@ -91,7 +91,7 @@ function ContactUs() {
             ></input>
             {formInfo.lName.length <= 4 && formInfo.lName.length > 0 ? (
               <small className="errorMessage1">
-                User name must be more than 2
+                User name must be more than 4
               </small>
             ) : (
               ""
