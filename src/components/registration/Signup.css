@@ -1,0 +1,130 @@
+.Register {
+  height: 100vh !important;
+  background-image: linear-gradient(
+      rgba(81, 192, 243, 0.5),
+      rgb(255, 255, 255, 0.63)
+    ),
+    url("../../../public/page-header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  font-family: "Numans", sans-serif;
+}
+
+.Register-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 6em;
+  padding-left: 2em;
+  height: 100%;
+  align-content: center;
+}
+
+.card2 {
+  height: 600px;
+  border-radius: 55px;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-header h3 {
+  padding: 1em;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #0aa5cd;
+  color: white;
+  border: 0 !important;
+  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.login_btn {
+  color: white;
+  background-color: #192032 !important;
+  width: 100px;
+  /* border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%; */
+}
+
+.login_btn:hover {
+  color: white;
+  background-color: white;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.links {
+  color: white;
+}
+
+.links a {
+  margin-left: 20px;
+  color: #0aa5cd;
+}
+.fas,
+.far {
+  margin-left: 1em;
+  font-size: 1em;
+}
+.errorMsg {
+  color: red;
+  font-size: 15px;
+  padding: 1em;
+  /* margin-bottom: 1em;
+  padding-bottom: 1em; */
+
+  width: 20em;
+}
+.form-control:invalid {
+  border-color: red;
+}
+.form-control:invalid ~ .errorMsg {
+  display: block;
+}
+.form-control {
+  width: 20em !important;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 580px) {
+  .Register-container {
+    display: flex;
+    justify-content: center;
+  }
+  .card2 {
+    width: 25em;
+    padding-left: 2em;
+    margin-left: 2em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .card2 {
+    width: 20em;
+    padding-left: 1em;
+    margin-left: 1em;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .card2 {
+    width: 15em;
+    height: 35em;
+    padding-left: 1em;
+    margin-left: 1em;
+  }
+}
+@media only screen and (max-width: 285px) {
+  .card2 {
+    width: 13em;
+  }
+  .Register-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+}

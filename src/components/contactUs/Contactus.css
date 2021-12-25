@@ -1,0 +1,121 @@
+*{
+margin: 0;
+border:0;
+box-sizing: border-box;
+
+}
+.contactForm p{
+color: white;
+}
+#contactDetails{
+   display: flex;
+   flex-direction: column;
+   margin-top: 2em;
+   padding: 2em;
+}
+.contactDetails a{
+    color:white;
+    font-weight: bolder;
+    padding: 1em;
+    margin: 2em;
+    text-decoration: none;
+
+}
+.contactDetails a:hover{
+color:rgb(231, 209, 12);
+}
+
+.contactWrapper{
+    background-image: url("car5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+   border:1px darkgrey solid;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   margin: 2em;
+   padding: 2em;
+  justify-items: center;
+  background-color: #E9EDF2;
+  border-radius: 1em;
+  
+   
+}
+
+.contactInput{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: 1px solid grey;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 0.5em;
+  
+
+}
+
+.contactForm{
+    margin-top: 2em;
+    padding: 1em;
+   
+}
+.contactSubmit{
+  text-align: center;
+  padding: 1em;
+  margin-left: 4em;
+  border-radius: 0.5rem;
+  background-color: #0AA5CD;
+  color: white;
+  font-weight: bold;
+}
+.contactSubmit:hover{
+    background-color: rgb(231, 209, 12);
+    color: white;
+    cursor: pointer;
+}
+ 
+#contSpan{
+color:rgb(231, 209, 12) ;
+text-decoration: none;
+font-weight: bold;
+
+}
+
+.contactWrapper h2{
+    text-align: center;
+    color: white;
+    
+
+}
+
+.errorMessage1{
+    color: white;
+}
+@media only screen and (max-width: 530px) {
+    .contactDetails a{
+        font-size: 0.5em;
+        padding: 0.5em;
+        margin: 0.5em;
+    
+    }
+    .contactWrapper{
+        margin: 0;
+       padding:0%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width: 410px){
+
+    .contactWrapper h2{
+        font-size: 1em;
+    }
+    .contactWrapper{
+        border: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
