@@ -159,6 +159,18 @@
   .card {
     width: 12em !important  ;
   }
+  .ladingpage-slider-container-btn p {
+    font-size: 3rem;
+    top: 60%;
+    left: 25%;
+  }
+  .ladingpage-slider-container-btn button {
+    position: absolute;
+    z-index: 99;
+    top: 70%;
+    left: 38%;
+    padding: 0.7rem 5rem;
+  }
 }
 @media screen and (max-width: 420px) {
   .ladingpage-slider .carousel-inner img {
@@ -166,13 +178,13 @@
   }
   .ladingpage-slider-container-btn p {
     font-size: 3rem;
-    top: 20%;
+    top: 40%;
     left: 20%;
   }
   .ladingpage-slider-container-btn button {
     position: absolute;
     z-index: 99;
-    top: 43%;
+    top: 60%;
     left: 18%;
     padding: 0.7rem 5rem;
   }
@@ -198,5 +210,19 @@
   .landingpage-Testimonials-cards {
     display: flex;
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 420px) {
+  .ladingpage-slider-container-btn p {
+    font-size: 2rem;
+    top: 50%;
+    left: 10%;
+  }
+  .ladingpage-slider-container-btn button {
+    position: absolute;
+    z-index: 99;
+    top: 60%;
+    left: 24%;
+    padding: 0.7rem 4rem;
   }
 }

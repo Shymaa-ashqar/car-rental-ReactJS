@@ -6,7 +6,7 @@
 }
 .logo-nav img {
   margin: auto 5em;
-  width: 6em;
+  width: 5em;
 }
 .burger-menu {
   display: none;
@@ -24,12 +24,12 @@
 }
 .nav-options ul li a {
   text-decoration: none;
+  color: #192032;
   font-weight: bold;
-  color: #18202d;
 }
 .nav-options ul li a:hover {
   color: #0aa5cd;
-  border-bottom: 2px solid #0aa5cd;
+  border-bottom: solid #0aa5cd;
   transition: 0.1s;
   transform: scale(1.2);
 }
@@ -37,9 +37,15 @@
 .register-btn ul {
   display: flex;
   list-style-type: none;
+  margin: 0.7em 2em;
+}
+.register-btn ul #hiddenbtn {
+  display: flex;
+  list-style-type: none;
+  margin: 0.7em 2em;
 }
 .register-btn ul li {
-  padding: 0.5em;
+  padding: 0.3em;
 }
 nav ul li a {
   color: white;
@@ -47,67 +53,54 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:hover {
-  color: #0aa5cd;
+  color: #192032;
   transition: 0.4s;
 }
-.login-btn {
+.login-btn-header {
   color: black;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 20px;
   background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
 }
-.login-btn:hover {
+.login-btn-header:hover {
   background-color: #0aa5cd;
-  color: white;
   transform: scale(1.1);
   transition: 0.3s;
 }
-.signup-btn {
+.signup-btn-header {
   color: white;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.7rem 1.5rem;
   font-size: 1rem;
   border-radius: 20px;
   background-color: #192032;
   cursor: pointer;
 }
-.signup-btn:hover {
+.signup-btn-header:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
 @media screen and (max-width: 768px) {
   .navbar {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-
-  .logo-nav img {
-    margin: 0;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
   .logo-nav {
     display: flex;
     align-items: center;
   }
+
   .logo-nav img {
-    margin: 0.5em;
+    margin: 1em;
   }
   .burger-menu {
     display: block;
-    margin-left: 11em;
+    margin-left: 32em;
     border: none;
     background: none;
   }
@@ -116,19 +109,71 @@ nav ul li a:hover {
     transform: scale(1.1);
     transition: 0.3s;
   }
-  .fa-bars {
-    color: #18202d;
-    font-size: 1.3rem;
+  .burger-menu .fa-bars {
+    color: black;
+    font-size: 2rem;
   }
   .nav-options ul {
     display: none;
+  }
+  .nav-options ul li {
+    padding: 0.5em;
   }
 
   .nav-options #hidden {
     display: flex;
     flex-direction: column;
   }
-  .register-btn {
+  .register-btn ul {
     display: none;
+  }
+  .register-btn #hiddenbtn {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-nav {
+    display: flex;
+    align-items: center;
+  }
+  .logo-nav img {
+    margin: 0;
+  }
+  .burger-menu {
+    display: block;
+    margin-left: 13em;
+    border: none;
+    background: none;
+  }
+
+  .burger-menu:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+  .burger-menu .fa-bars {
+    color: black;
+    font-size: 1.3rem;
+  }
+  .nav-options ul {
+    display: none;
+  }
+  .nav-options ul li {
+    padding: 0.5em;
+  }
+
+  .nav-options #hidden {
+    display: flex;
+    flex-direction: column;
+  }
+  .register-btn ul {
+    display: none;
+  }
+  .register-btn #hiddenbtn {
+    display: flex;
   }
 }

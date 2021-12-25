@@ -1,0 +1,87 @@
+.aboutus-about-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2em;
+}
+.aboutus-about-section img {
+  width: 20em;
+  border-radius: 10px;
+}
+.aboutus-text {
+  width: 50%;
+  margin: auto 0;
+}
+.aboutus-text button {
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: #192032;
+  cursor: pointer;
+}
+.aboutus-text button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+/*////////////////////////////////////////// our team styling  */
+.ourteam-listing img {
+  width: 20em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+}
+.ourteam-listing h3,
+h6 {
+  text-align: center;
+}
+.ourteam-body {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  justify-content: center;
+  text-align: center;
+}
+.ourteam-body2 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-content: center;
+  text-align: center;
+  margin: 2em 0 2em 2em;
+}
+.ourteam .ourteam-title {
+  text-align: center;
+  font-weight: bold;
+  color: #0aa5cd;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid;
+  width: 40%;
+  align-items: center;
+  margin: 2em auto;
+  padding-bottom: 0.5em;
+}
+@media screen and (max-width: 420px) {
+  .aboutus-about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutus-text {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .aboutus-about-section img {
+    width: 18em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+  }
+  .ourteam-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .ourteam-body2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
