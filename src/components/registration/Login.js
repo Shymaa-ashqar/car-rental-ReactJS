@@ -50,7 +50,11 @@ function Login({ setLogged, setSubmitted }) {
         localStorage.setItem("logged_user", JSON.stringify(Userss[index]));
         setLogged(true);
         setSubmitted(true);
-        navigate("/");
+        switch(sessionStorage.getItem("from")){
+          case 'call': {navigate("/contactus"); break;}
+          case 'listing' : {navigate("/listingcars"); break;}
+          default: navigate("/")
+        }
 
         return (flag = false);
       }

@@ -14,6 +14,17 @@ function ContactUs() {
   const handleChange = (e, attr) => {
     setFormInfo({ ...formInfo, [attr]: e.target.value });
   };
+
+  //********** Handle Date ********/
+  let today = new Date();
+  const start = today.toISOString();
+  const valueCut1 = start.substring(0,10);
+  let [thisDay, setThisDay] = useState(valueCut1);
+  
+  const handleDateChange = (e) =>{
+    setThisDay(e.target.value)
+}
+
   const checkConsults = (e) => {
     e.preventDefault();
 
@@ -22,13 +33,12 @@ function ContactUs() {
       lName: formInfo.lName,
       email: formInfo.email,
       Phone: formInfo.Phone,
-      Date: formInfo.Date,
+      Date: thisDay,
       message: formInfo.message,
     };
 
     if (localStorage.getItem("consults")) {
       if (formInfo.fName.length > 4 && formInfo.lName.length > 4) {
-        console.log(formInfo.fName);
         let consults = JSON.parse(localStorage.getItem("consults"));
         consults.push(userInfo);
         localStorage.setItem("consults", JSON.stringify(consults));
@@ -44,18 +54,19 @@ function ContactUs() {
       localStorage.setItem("consults", JSON.stringify(consults));
     }
   };
-
+  
   return (
     <>
       <div className="contactWrapper">
         <div className="contactForm">
           <h2>Contact Us</h2>
+          {!localStorage.getItem("logged_user")&&
           <p>
             Kindly fill the below information inorder to call you or{" "}
-            <Link Link to="/Login">
+            <Link onClick={()=>{sessionStorage.setItem("from", "call")}} Link to="/Login">
               <span id="contSpan">Login</span>
             </Link>
-          </p>
+          </p>}
           <form onSubmit={checkConsults}>
             <input
               value={formInfo.fName}
@@ -121,10 +132,12 @@ function ContactUs() {
 
             <input
               name="Date"
+              onChange ={(e)=>handleDateChange(e)}
               value={formInfo.Date}
-              onChange={handleChange}
               className="contactInput"
               type={"date"}
+              min = {valueCut1}
+              value = {thisDay}
               id="Date"
               placeholder="Date"
               required
