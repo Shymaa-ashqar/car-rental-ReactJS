@@ -10,26 +10,53 @@ const Landingpage = () => {
   return (
     <div>
       <div className="ladingpage-slider">
-        <div className="ladingpage-slider-container-btn">
-          <p>Make Your Life Easy</p>
-          <Link to="/listingcars">
-            <button>RENT NOW</button>
-          </Link>
-        </div>
         <div
           id="carouselExampleControls"
           className="carousel slide"
           data-ride="carousel"
         >
           <div className="carousel-inner  ">
-            <div className="carousel-item active" data-interval="500">
-              <img className="d-block w-100  " src="./car1.jpg" alt="car one" />
+            <div
+              className="carousel-item carousel-item-img1 active"
+              data-interval="500"
+            >
+              <div className="ladingpage-slider-container-btn">
+                <p>Make Your Life Easy</p>
+                <div>
+                  <Link to="/listingcars">
+                    <button>RENT NOW</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="image-layer-overlay"></div>
             </div>
-            <div className="carousel-item" data-interval="500">
-              <img className="d-block w-100" src="./car2.jpg" alt="car two" />
+            <div
+              className="carousel-item carousel-item-img2 "
+              data-interval="500"
+            >
+              <div className="ladingpage-slider-container-btn">
+                <p>Make Your Life Easy</p>
+                <div>
+                  <Link to="/listingcars">
+                    <button>RENT NOW</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="image-layer-overlay"></div>
             </div>
-            <div className="carousel-item" data-interval="500">
-              <img className="d-block w-100" src="./car3.jpg" alt="car three" />
+            <div
+              className="carousel-item carousel-item-img3 "
+              data-interval="500"
+            >
+              <div className="ladingpage-slider-container-btn">
+                <p>Make Your Life Easy</p>
+                <div>
+                  <Link to="/listingcars">
+                    <button>RENT NOW</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="image-layer-overlay"></div>
             </div>
           </div>
           <a
