@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Cards = ({ src, title, des }) => {
   return (
-    <div>
+    <div className="cars-cards">
       <div className="card" style={{ width: "20rem" }}>
         <img className="card-img-top" src={src} alt="Card one" />
         <div className="card-body">

@@ -15,18 +15,22 @@
   background-image: url("http://layerdrops.com/entox/assets/images/backgrounds/main-slider-1-3.jpg") !important;
   height: 80vh !important;
   background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
 }
 .carousel-item-img2 {
   width: 100% !important;
   background-image: url("https://d2n7lymu30cgf.cloudfront.net/assets/images/car-1.jpg") !important;
   height: 80vh !important;
   background-repeat: no-repeat;
+  text-align: center;
 }
 .carousel-item-img3 {
   width: 100% !important;
   background-image: url("https://layerdrops.com/entox/assets/images/backgrounds/main-slider-1-1.jpg") !important;
   height: 80vh !important;
   background-repeat: no-repeat;
+  text-align: center;
 }
 .image-layer-overlay {
   position: absolute;
@@ -124,12 +128,12 @@
   align-items: center;
   text-align: center;
 }
-.card .btn {
+.cars-cards .card .btn {
   background-color: #192032 !important;
   border: none;
   width: fit-content;
 }
-.card .btn:hover {
+.cars-cards .card .btn:hover {
   background-color: white !important;
   border: 1px solid #192032;
   color: #192032;
@@ -204,8 +208,26 @@
   color: #0aa5cd;
 }
 @media screen and (max-width: 768px) {
-  .card {
+  .cars-cards .card {
     width: 12em !important  ;
+  }
+}
+@media screen and (max-width: 540px) {
+  .landingpage-explore-cars {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .card {
+    width: 20em !important;
+  }
+  .landingpage-about {
+    display: flex;
+    flex-direction: column;
+  }
+  .landingpage-Testimonials-cards {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 420px) {
@@ -232,12 +254,23 @@
     display: flex;
     flex-direction: column;
   }
-}
-@media screen and (max-width: 420px) {
+
   .ladingpage-slider-container-btn p {
     font-size: 2rem;
   }
   .ladingpage-slider-container-btn button {
     padding: 0.7rem 4rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .cars-cards .card {
+    width: 18em !important  ;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 280px) {
+  .cars-cards .card {
+    width: 15em !important  ;
+    margin: auto;
   }
 }

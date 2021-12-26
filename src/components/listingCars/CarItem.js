@@ -20,24 +20,25 @@ function CarItem(props) {
           </p>
           <button
             className="btn"
-            onClick={() => {logged?
-              navigate(`/bookingForm/${props.carsData.id}`):
-              (sessionStorage.setItem("from","listing")||
-              navigate('/Login'))
+            onClick={() => {
+              logged
+                ? navigate(`/bookingForm/${props.carsData.id}`)
+                : sessionStorage.setItem("from", "listing") ||
+                  navigate("/Login");
             }}
           >
             Book Now
           </button>
           <div className="info">
-            <i class="fas fa-caret-right "></i>
+            <i className="fas fa-caret-right "></i>
             <span> 2 Seats</span>
-            <i class="fas fa-caret-right "></i>
+            <i className="fas fa-caret-right "></i>
             <span> 2 Bags</span>
-            <i class="fas fa-caret-right "></i>
+            <i className="fas fa-caret-right "></i>
             <span> Airbags</span>
-            <i class="fas fa-caret-right"></i>
+            <i className="fas fa-caret-right"></i>
             <span> Manual/Auto</span>
-            <i class="fas fa-caret-right "></i>
+            <i className="fas fa-caret-right "></i>
             <span> AC</span>
           </div>
         </div>

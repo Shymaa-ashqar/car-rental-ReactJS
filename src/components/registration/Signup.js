@@ -21,7 +21,7 @@ function Signup({ setSubmitted, setLogged }) {
     const { name, value } = e.target;
     setFormGrroup({ ...formGroup, [name]: value });
   };
-    
+
   let isValidate;
   const validate = (e, values) => {
     e.preventDefault();
@@ -97,10 +97,9 @@ function Signup({ setSubmitted, setLogged }) {
       <div className="Register-container">
         <div className="d-flex justify-content-center h-100">
           <div className="card2">
-         
-                      <div className="card-body">
-                          <h3>Sign Up </h3>
-                         
+            <div className="card-body">
+              <h3>Sign Up </h3>
+
               <form onSubmit={(e) => validate(e, formGroup)} id="form">
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
@@ -140,7 +139,7 @@ function Signup({ setSubmitted, setLogged }) {
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text">
-                      <i class="far fa-envelope"></i>
+                      <i className="far fa-envelope"></i>
                     </span>
                   </div>
                   <input
@@ -170,7 +169,6 @@ function Signup({ setSubmitted, setLogged }) {
                     value={formGroup.password}
                     onChange={register}
                     required
-                    
                   />{" "}
                 </div>{" "}
                 <small className="errorMsg">{formErrors.password}</small>

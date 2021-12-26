@@ -28,6 +28,10 @@
 }
 .search-sort {
   display: flex;
+  justify-content: center;
+}
+.sorting-input {
+  margin-top: 1em;
 }
 .car-item {
   display: flex;

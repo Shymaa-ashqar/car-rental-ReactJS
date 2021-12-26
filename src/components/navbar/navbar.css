@@ -102,7 +102,47 @@ nav ul li a:hover {
 @media screen and (max-width: 1024px) {
   .navbar {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+  }
+  .logo-nav {
+    display: flex;
+    align-items: center;
+  }
+  .logo-nav img {
+    margin: 0;
+  }
+  .burger-menu {
+    display: block;
+    margin-left: 50em;
+    border: none;
+    background: none;
+  }
+
+  .burger-menu:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+  .burger-menu .fa-bars {
+    color: black;
+    font-size: 1.3rem;
+  }
+  .nav-options ul {
+    display: none;
+  }
+  .nav-options ul li {
+    padding: 0.5em;
+  }
+
+  .nav-options #hidden {
+    display: flex;
+    flex-direction: column;
+  }
+  .register-btn ul {
+    display: none;
+  }
+  .register-btn #hiddenbtn {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 768px) {

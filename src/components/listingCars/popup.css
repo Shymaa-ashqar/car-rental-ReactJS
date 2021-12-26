@@ -1,69 +1,117 @@
 .popup-box {
-    position: fixed;
-    background: #00000050;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 1000vh;
+  top: 0;
+  left: 0;
+  padding: 18em;
+}
+
+.box {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+.box-title {
+  padding-bottom: 0.3em;
+}
+.box-illustrate {
+  padding-bottom: 0.3em;
+}
+.box .box-btns {
+  display: flex;
+  gap: 1em;
+}
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+
+.finalBtn {
+  display: flex;
+  background-color: #0aa5cd;
+  color: white;
+  padding: 0.7em;
+  cursor: pointer;
+  outline-style: none;
+  transition: 500ms;
+  border: 1px solid #0aa5cd;
+  border-radius: 5px;
+}
+.finalBtn-cancel {
+  display: flex;
+  background-color: red;
+  color: white;
+  padding: 0.7em;
+  cursor: pointer;
+  outline-style: none;
+  transition: 500ms;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.box h3 {
+  text-align: left;
+  margin: 0.3em 0 !important;
+}
+
+.box p {
+  text-align: left;
+}
+
+.finalBtn:hover {
+  background-color: white;
+  border: 1px solid #0aa5cd;
+  color: #0aa5cd;
+  cursor: pointer;
+}
+.finalBtn-cancel:hover {
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+}
+@media screen and (max-width: 786px) {
+  .popup-box {
+    padding: 10em 0;
   }
-   
+}
+@media screen and (max-width: 540px) {
   .box {
-    position: relative;
-    width: 70%;
-    margin: 0 auto;
-    height: auto;
-    max-height: 70vh;
-    margin-top: calc(100vh - 85vh - 20px);
-    background: #fff;
-    border-radius: 4px;
-    padding: 20px;
-    border: 1px solid #999;
-    overflow: auto;
+    width: 80vw;
   }
-   
-  .close-icon {
-    content: 'x';
-    cursor: pointer;
-    position: fixed;
-    right: calc(15% - 30px);
-    top: calc(100vh - 85vh - 33px);
-    background: #ededed;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    line-height: 20px;
-    text-align: center;
-    border: 1px solid #999;
-    font-size: 20px;
+}
+@media screen and (max-width: 420px) {
+  .box {
+    width: 80vw;
   }
-
-  .finalBtn{
-      display: flex;
-      background-color: #0aa5cd;
-      color: white;
-      padding: 0.7em;
-      cursor: pointer;
-      outline-style: none;
-      transition: 500ms;
-      border: 1px solid #0aa5cd;
-      border-radius: 5px;
-
+}
+@media screen and (max-width: 280px) {
+  .box {
+    width: 100vw;
+    padding: 3em 0;
   }
-
-  .box h3 {
-      text-align: left;
-      margin: 0.3em 0 !important;
-    }
-    
-    .box p{
-        text-align: left;
-        
-
-  }
-
-  .finalBtn:hover {
-    background-color: white;
-    border: 1px solid #0aa5cd;
-    color: #0aa5cd;
-    cursor: pointer;
-  }
+}

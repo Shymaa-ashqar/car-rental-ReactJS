@@ -83,5 +83,11 @@ h6 {
   .ourteam-body2 {
     display: flex;
     flex-direction: column;
+    margin: 1em;
+  }
+}
+@media screen and (max-width: 320px) {
+  .ourteam-listing img {
+    width: 15em;
   }
 }

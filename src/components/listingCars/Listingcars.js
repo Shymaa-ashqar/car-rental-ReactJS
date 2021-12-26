@@ -32,7 +32,6 @@ function Listingcars(props) {
         })
       );
     }
-    console.log(data);
   };
 
   return (
@@ -50,7 +49,7 @@ function Listingcars(props) {
             className="mr-5"
             onChange={handleSearch}
           />
-          <div>
+          <div className="sorting-input">
             <label className="pr-2">Sort by:</label>
             <select onChange={handleSort}>
               <option value="All">Default</option>
@@ -63,7 +62,7 @@ function Listingcars(props) {
           {search == null
             ? data.map((car) => {
                 {
-                  return <CarItem carsData={car} />;
+                  return <CarItem carsData={car} key={car.id} />;
                 }
               })
             : data.map((car) => {
@@ -71,7 +70,7 @@ function Listingcars(props) {
                   return car.name
                     .toLowerCase()
                     .includes(search.toLowerCase()) ? (
-                    <CarItem carsData={car} />
+                    <CarItem carsData={car} key={car.id} />
                   ) : (
                     ""
                   );

@@ -20,12 +20,12 @@ function ContactUs() {
   //********** Handle Date ********/
   let today = new Date();
   const start = today.toISOString();
-  const valueCut1 = start.substring(0,10);
+  const valueCut1 = start.substring(0, 10);
   let [thisDay, setThisDay] = useState(valueCut1);
-  
-  const handleDateChange = (e) =>{
-    setThisDay(e.target.value)
-}
+
+  const handleDateChange = (e) => {
+    setThisDay(e.target.value);
+  };
 
   const checkConsults = (e) => {
     e.preventDefault();
@@ -55,45 +55,55 @@ function ContactUs() {
       setSubmitted(true);
     }
   };
-  
+
   return (
     <>
       <div className="contactWrapper">
-      <div className="contactDetails">
+        <div className="contactDetails">
           <h3>Don't Hesitate to connect with us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam,
+          </p>
           <ul id="contactDetails">
-            <a href="#" class="fas fa-phone-alt">
+            <Link to="#" className="fas fa-phone-alt">
               {" "}
               +962798452640
-            </a>
-            <a
-              href="https://maps.google.com"
+            </Link>
+            <Link
+              to="https://maps.google.com"
               targrt="_blank"
-              class="fas fa-map-marker-alt"
+              className="fas fa-map-marker-alt"
             >
               {" "}
               Our location
-            </a>
-            <a
-              href="https://www.google.com"
+            </Link>
+            <Link
+              to="https://www.google.com"
               target="_blank"
-              class="fas fa-envelope"
+              className="fas fa-envelope"
             >
               {" "}
               Email
-            </a>
+            </Link>
           </ul>
         </div>
         <div className="contactForm">
           <h2>Contact Us</h2>
-          {!localStorage.getItem("logged_user")&&
-          <p>
-            Kindly fill the below information inorder to call you or{" "}
-            <Link onClick={()=>{sessionStorage.setItem("from", "call")}} Link to="/Login">
-              <span id="contSpan">Login</span>
-            </Link>
-          </p>}
+          {!localStorage.getItem("logged_user") && (
+            <p>
+              Kindly fill the below information inorder to call you or{" "}
+              <Link
+                onClick={() => {
+                  sessionStorage.setItem("from", "call");
+                }}
+                to="/Login"
+              >
+                <span id="contSpan">Login</span>
+              </Link>
+            </p>
+          )}
           <form onSubmit={checkConsults}>
             <input
               value={formInfo.fName}
@@ -155,20 +165,20 @@ function ContactUs() {
               id="Phone"
               placeholder="Enter your mobile number"
               required
-            ></input>
+            />
 
             <input
               name="Date"
-              onChange ={(e)=>handleDateChange(e)}
+              onChange={(e) => handleDateChange(e)}
               value={formInfo.Date}
               className="contactInput"
               type={"date"}
-              min = {valueCut1}
-              value = {thisDay}
+              min={valueCut1}
+              value={thisDay}
               id="Date"
               placeholder="Date"
               required
-            ></input>
+            />
 
             <input
               name="message"
@@ -183,10 +193,8 @@ function ContactUs() {
             <button className="contactSubmit">Submit</button>
           </form>{" "}
         </div>
-        
       </div>
-      {submitted&&
-        <Popup1 />}
+      {submitted && <Popup1 />}
     </>
   );
 }

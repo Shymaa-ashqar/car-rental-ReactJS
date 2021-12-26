@@ -14,7 +14,9 @@ import ScrollToTop from "./components/scrolltotop/ScrollToTop";
 import { useState, useEffect } from "react";
 function App() {
   const [logged, setLogged] = useState(localStorage.getItem("logged_user"));
-  const [submitted, setSubmitted] = useState(localStorage.getItem("logged_user"));
+  const [submitted, setSubmitted] = useState(
+    localStorage.getItem("logged_user")
+  );
   const [cars_Data, setData] = useState(carsData);
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -42,7 +44,7 @@ function App() {
         {isVisible ? (
           <div className="jump">
             <button onClick={arrowUp}>
-              <i class="fa-solid fa-arrow-up" />
+              <i className="fa-solid fa-arrow-up" />
             </button>
           </div>
         ) : null}
@@ -54,31 +56,33 @@ function App() {
           submitted={submitted}
           setSubmitted={setSubmitted}
         />
-        <Routes>
-          <Route path="/" element={<Landingpage />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/aboutus" element={<Aboutus />} />
-          <Route
-            path="/listingcars"
-            element={<Listingcars cars={cars_Data} />}
-          />
-          <Route
-            path="/bookingForm/:id"
-            element={<BookingForm cars={cars_Data} />}
-          />
-          <Route
-            path="/Login"
-            element={
-              <Login setLogged={setLogged} setSubmitted={setSubmitted} />
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <Signup setSubmitted={setSubmitted} setLogged={setLogged} />
-            }
-          />
-        </Routes>
+        <div className="routes-div">
+          <Routes>
+            <Route path="/" element={<Landingpage />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/aboutus" element={<Aboutus />} />
+            <Route
+              path="/listingcars"
+              element={<Listingcars cars={cars_Data} />}
+            />
+            <Route
+              path="/bookingForm/:id"
+              element={<BookingForm cars={cars_Data} />}
+            />
+            <Route
+              path="/Login"
+              element={
+                <Login setLogged={setLogged} setSubmitted={setSubmitted} />
+              }
+            />
+            <Route
+              path="/signup"
+              element={
+                <Signup setSubmitted={setSubmitted} setLogged={setLogged} />
+              }
+            />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

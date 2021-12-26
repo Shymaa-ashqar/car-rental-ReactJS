@@ -1,137 +1,128 @@
-*{
-margin: 0;
-border:0;
-box-sizing: border-box;
-
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
-.contactForm{
-    background-color: #E9EDF2;
-    border-radius: 1em;
-    justify-content: center;
-    text-align: center;
-    padding: 0.5em;
-    width: 90%;
-    /* margin-right: 3em; */
-    /* margin-left: 1em; */
-    margin: 0 auto;
-
-
-}
-.contactDetails h3{
-    color:#0AA5CD;
-}
-.contactDetails p,h3{
-margin: 0.5em;
-text-align: justify;
-}
-.contactForm p{
-color: black;
-
-}
-#contactDetails{
-   display: flex;
-   flex-direction: column;
-   margin-top: 2em;
-   padding: 2em;
-}
-.contactDetails a{
-    color:#192032;
-    font-weight: bolder;
-    padding: 0.5em;
-    margin: 1em;
-    text-decoration: none;
-
-}
-.contactDetails a:hover{
-color:#0AA5CD;
-}
-
-.contactWrapper{
-    
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   margin: 2em;
-   padding: 2em;
-  justify-items: center;
-  
-   
-}
-
-.contactInput{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* width: 80%; */
-    border: 1px solid grey;
-    padding: 0.5em;
-    margin: 2em auto;
-    border-radius: 0.5em;
-   
-}
-
-
-
-.contactSubmit{
+.contactForm {
+  background-color: #e9edf2;
+  border-radius: 1em;
+  justify-content: center;
   text-align: center;
   padding: 1em;
+  width: 90%;
+  margin: 0 auto;
+}
+.contactDetails h3 {
+  color: #0aa5cd;
+}
+
+.contactForm p {
+  color: #192032;
+}
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
+}
+.contactDetails ul {
+  display: flex;
+  flex-direction: column;
+}
+.contactDetails a {
+  color: #192032;
+  font-weight: bold;
+  padding: 0.5em;
+  margin: 1em;
+  text-decoration: none;
+}
+.contactDetails a:hover {
+  color: #0aa5cd;
+}
+
+.contactWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2em;
+  padding: 2em;
+  justify-items: center;
+}
+
+.contactInput {
+  display: flex;
+  width: 70%;
+  border: 1px solid grey;
+  padding: 0.5em;
+  margin: 2em auto;
+  border-radius: 0.5em;
+}
+
+.contactSubmit {
+  text-align: center;
+  padding: 1em 4em;
   margin-right: 1.5em;
   border-radius: 0.5rem;
   background-color: #192032;
   color: white;
   font-weight: bold;
-  /* width: 25%; */
 }
-.contactSubmit:hover{
-    background-color: #0AA5CD;
-    color: white;
-    cursor: pointer;
+.contactSubmit:hover {
+  background-color: #0aa5cd;
+  color: white;
+  cursor: pointer;
 }
- 
+
 #contSpan {
-color:#0AA5CD ;
-text-decoration: none;
-font-weight: bold;
-
+  color: #0aa5cd;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.contactWrapper h2{
-    text-align: center;
-    color: #0AA5CD;
-    margin: 0.5em;
-    
+.contactWrapper h2 {
+  text-align: center;
+  color: #0aa5cd;
+  margin: 0.5em;
 }
 
-.errorMessage1{
-    color: red;
+.errorMessage1 {
+  color: red;
+}
+@media only screen and (max-width: 1024px) {
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .contactDetails ul {
+    display: flex !important;
+    flex-direction: row;
+  }
 }
 @media only screen and (max-width: 530px) {
-    .contactDetails a{
-        font-size: 0.5em;
-        padding: 0.5em;
-        margin: 0.5em;
-    
-    }
-    .contactWrapper{
-        margin: 0;
-       padding:0%;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    
-
+  .contactDetails a {
+    font-size: 0.5em;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+  .contactWrapper {
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
-@media only screen and (max-width: 410px){
-
-    .contactWrapper h2{
-        font-size: 1em;
-    }
-    .contactWrapper{
-        border: none;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 3em;
-    }
-
-
+@media screen and (max-width: 410px) {
+  .contactWrapper h2 {
+    font-size: 1em;
+  }
+  .contactWrapper {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3em;
+  }
+  .contactDetails {
+    display: flex;
+  }
 }
