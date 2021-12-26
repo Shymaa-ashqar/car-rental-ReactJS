@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import carsData from "./carsData";
+import Popup from "./popup"
 import "./formStyle.css";
 
 function BookingForm() {
   let { id } = useParams();
+  const [submitted,setSubmitted] = useState(false)
+  const [test, setTest] = useState(null);
 
   if (!localStorage.getItem("reservations"))
     localStorage.setItem("reservations", JSON.stringify([]));
@@ -71,6 +74,7 @@ function BookingForm() {
     setValueCut2(minEndCut);
   }, [valueCut]);
 
+
   const handleDateChange = (e) => {
     setValueCut(e.target.value);
   };
@@ -78,106 +82,112 @@ function BookingForm() {
     setValueCut2(e.target.value);
   };
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  let reservation;
+
+  console.log(test);
+
+const handleFormSubmit=(e)=>{
     e.preventDefault();
+    reservation = {
+        id: id,
+        ...userInfo,
+        tel: e.target.tel.value,
+        start: valueCut,
+        end: valueCut2,
+        hour: e.target.hours.value,
+      };
 
-    let lclArr = JSON.parse(localStorage.getItem("reservations"));
+      setSubmitted(true);
+      setTest(reservation);
+}
 
-    let reservation = {
-      id: id,
-      ...userInfo,
-      tel: e.target.tel.value,
-      start: valueCut,
-      end: valueCut2,
-      hour: e.target.hours.value,
-    };
-    lclArr.push(reservation);
 
-    localStorage.setItem("reservations", JSON.stringify(lclArr));
-    // navigate('/listingcars');
-  };
 
   let duration =
     (new Date(valueCut2).getTime() - new Date(valueCut).getTime()) / 86400000;
 
   return (
-    <div className="car-form-container ">
-      <form className="form" onSubmit={(e) => handleSubmit(e)}>
-        <div className="textsCont">
-          <div className="texts" id="texts1">
+      <>
+        <div className="car-form-container ">
+        <form className="form" onSubmit={(e) => handleFormSubmit(e)}>
+            <div className="textsCont">
+            <div className="texts" id="texts1">
+                <input
+                onChange={(e) => handleInputChange(e)}
+                value={userInfo.fName}
+                required
+                placeholder="First Name"
+                type="text"
+                name="fName"
+                id="fName"
+                />
+                <input
+                onChange={(e) => handleInputChange(e)}
+                value={userInfo.lName}
+                required
+                placeholder="Last Name"
+                type="text"
+                name="lName"
+                id="lName"
+                />
+            </div>
+            <div className="texts" id="texts2">
+                <input
+                value={userInfo.email}
+                required
+                placeholder="Email"
+                type="email"
+                name="email"
+                id="email"
+                />
+                <input
+                type="tel"
+                pattern="[0-9]{10}"
+                required
+                placeholder="Mobile Number"
+                name="tel"
+                id="tel"
+                />
+            </div>
+            </div>
+            <div className="dates">
             <input
-              onChange={(e) => handleInputChange(e)}
-              value={userInfo.fName}
-              required
-              placeholder="First Name"
-              type="text"
-              name="fName"
-              id="fName"
+                onChange={(e) => handleDateChange(e)}
+                value={valueCut}
+                type="date"
+                name="start"
+                min={found ? starting : valueCut1}
             />
             <input
-              onChange={(e) => handleInputChange(e)}
-              value={userInfo.lName}
-              required
-              placeholder="Last Name"
-              type="text"
-              name="lName"
-              id="lName"
+                onChange={(e) => handleDateChange2(e)}
+                min={valueCut2}
+                value={valueCut2}
+                type="date"
+                name="end"
             />
-          </div>
-          <div className="texts" id="texts2">
-            <input
-              value={userInfo.email}
-              required
-              placeholder="Email"
-              type="email"
-              name="email"
-              id="email"
-            />
-            <input
-              type="tel"
-              pattern="[0-9]{10}"
-              required
-              placeholder="Mobile Number"
-              name="tel"
-              id="tel"
-            />
-          </div>
-        </div>
-        <div className="dates">
-          <input
-            onChange={(e) => handleDateChange(e)}
-            value={valueCut}
-            type="date"
-            name="start"
-            min={found ? starting : valueCut1}
-          />
-          <input
-            onChange={(e) => handleDateChange2(e)}
-            min={valueCut2}
-            value={valueCut2}
-            type="date"
-            name="end"
-          />
-          <input required type="time" name="hours" />
-        </div>
-        <div className="total">
-          <p className="state">{duration} Days</p>
-          <p>Total :{duration * ppd} JOD</p>
-        </div>
-        <div className="submit">
-          <input type="submit" value="Book Now !" />
-        </div>
-      </form>
+            <input required type="time" name="hours" />
+            </div>
+            <div className="total">
+            <p className="state">{duration} Days</p>
+            <p>Total :{duration * ppd} JOD</p>
+            </div>
+            <div className="submit">
+            <input type="submit" value="Book Now !" />
+            </div>
+        </form>
 
-      {found && (
-        <>
-          <h2 className="register-label">
-            You already have a reservation from {lcl[indx].start} to{" "}
-            {lcl[indx].end}
-          </h2>
-        </>
-      )}
-    </div>
+        {found && (
+            <>
+            <h2 className="register-label">
+                You already have a reservation from {lcl[indx].start} to{" "}
+                {lcl[indx].end}
+            </h2>
+            </>
+        )}
+        </div>
+        {submitted&&
+            <Popup test = {test} setSubmitted = {setSubmitted} />} 
+    </>
   );
 }
 

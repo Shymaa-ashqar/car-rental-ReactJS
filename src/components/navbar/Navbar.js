@@ -41,19 +41,19 @@ function Header({ submitted, setSubmitted, logged, setLogged }) {
           <li>
             {!logged && (
               <Link to="/login">
-                <button className="login-btn-header">Login</button>
+                <button  className="login-btn-header">Login</button>
               </Link>
             )}
           </li>
           <li>
-            {logged || submitted ? (
+            {logged ? (
               <Link to="/login">
                 <button
                   className="logout-btn-header"
                   onClick={() => {
-                    setSubmitted(false);
-                    setLogged(false);
                     localStorage.removeItem("logged_user");
+                    setLogged(localStorage.getItem("logged_user"));
+                    setSubmitted(localStorage.getItem("logged_user"));
                     sessionStorage.removeItem("from");
                   }}
                 >
@@ -63,7 +63,7 @@ function Header({ submitted, setSubmitted, logged, setLogged }) {
             ) : null}
           </li>
           <li>
-            {!submitted && (
+            {!logged && (
               <Link to="/signup">
                 {" "}
                 <button className="signup-btn-header">Signup</button>

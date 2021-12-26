@@ -29,8 +29,8 @@ function Login({ setLogged, setSubmitted }) {
       ) {
         index = i;
         localStorage.setItem("logged_user", JSON.stringify(Userss[index]));
-        setLogged(true);
-        setSubmitted(true);
+        setLogged(localStorage.getItem("logged_user"));
+        setSubmitted(localStorage.getItem("logged_user"));
         switch (sessionStorage.getItem("from")) {
           case "call": {
             navigate("/contactus");

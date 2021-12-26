@@ -13,8 +13,8 @@ import Aboutus from "./components/aboutUs/Aboutus";
 import ScrollToTop from "./components/scrolltotop/ScrollToTop";
 import { useState, useEffect } from "react";
 function App() {
-  const [logged, setLogged] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [logged, setLogged] = useState(localStorage.getItem("logged_user"));
+  const [submitted, setSubmitted] = useState(localStorage.getItem("logged_user"));
   const [cars_Data, setData] = useState(carsData);
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {

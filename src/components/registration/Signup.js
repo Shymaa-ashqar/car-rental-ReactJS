@@ -83,17 +83,12 @@ function Signup({ setSubmitted, setLogged }) {
       if (flag === true && isValidate === true) {
         arr.push(users);
         localStorage.setItem("users", JSON.stringify(arr));
-
-        setSubmitted(true);
-        setLogged(true);
         navigate("/Login");
       }
     } else if (isValidate === true) {
       arr.push(users);
 
       localStorage.setItem("users", JSON.stringify(arr));
-      setSubmitted(true);
-      setLogged(true);
       navigate("/Login");
     }
   };

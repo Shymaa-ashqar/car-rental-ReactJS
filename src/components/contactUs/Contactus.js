@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Popup1 from "./popup1";
 import "../contactUs/Contactus.css";
 
 function ContactUs() {
@@ -10,6 +11,7 @@ function ContactUs() {
     ? JSON.parse(localStorage.getItem("logged_user"))
     : obj;
 
+  const [submitted, setSubmitted] = useState(false);
   const [formInfo, setFormInfo] = useState(logged);
   const handleChange = (e, attr) => {
     setFormInfo({ ...formInfo, [attr]: e.target.value });
@@ -42,9 +44,7 @@ function ContactUs() {
         let consults = JSON.parse(localStorage.getItem("consults"));
         consults.push(userInfo);
         localStorage.setItem("consults", JSON.stringify(consults));
-        alert(
-          "Your request is submitted correctly and you will be contacted on the selected date"
-        );
+        setSubmitted(true);
       } else {
         alert("wrong");
       }
@@ -52,6 +52,7 @@ function ContactUs() {
       const consults = [];
       consults.push(userInfo);
       localStorage.setItem("consults", JSON.stringify(consults));
+      setSubmitted(true);
     }
   };
   
@@ -184,6 +185,8 @@ function ContactUs() {
         </div>
         
       </div>
+      {submitted&&
+        <Popup1 />}
     </>
   );
 }
