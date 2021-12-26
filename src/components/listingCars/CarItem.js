@@ -22,7 +22,8 @@ function CarItem(props) {
             className="btn"
             onClick={() => {logged?
               navigate(`/bookingForm/${props.carsData.id}`):
-              navigate('/Login');
+              (sessionStorage.setItem("from","listing")||
+              navigate('/Login'))
             }}
           >
             Book Now
