@@ -85,15 +85,10 @@
 /*/////////////////////////////////////////// testimonials styling */
 .testimonials {
   padding: 1em 0;
-}
-.testimonials-container {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-}
-.testimonials-top,
-.testimonials-body {
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .testimonials-item img {

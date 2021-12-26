@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import ContactUs from "./components/contactUs/Contactus";
 import Listingcars from "./components/listingCars/Listingcars";
@@ -10,14 +10,44 @@ import Login from "./components/registration/Login";
 import Landingpage from "./components/landingpage/Landingpage";
 import Footer from "./components/footer/Footer";
 import Aboutus from "./components/aboutUs/Aboutus";
-import { useState } from "react";
+import ScrollToTop from "./components/scrolltotop/ScrollToTop";
+import { useState, useEffect } from "react";
 function App() {
   const [logged, setLogged] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [cars_Data, setData] = useState(carsData);
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 200) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+  const arrowUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
+        {isVisible ? (
+          <div className="jump">
+            <button onClick={arrowUp}>
+              <i class="fa-solid fa-arrow-up" />
+            </button>
+          </div>
+        ) : null}
+
+        <ScrollToTop />
         <Navbar
           logged={logged}
           setLogged={setLogged}

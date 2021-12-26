@@ -1,0 +1,21 @@
+.jump button {
+  border: none;
+  outline-style: none;
+  position: fixed;
+  right: 2em;
+  z-index: 100;
+  cursor: pointer;
+  top: 90%;
+  background-color: #0aa5cd;
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}
+.jump .fa-arrow-up {
+  color: #0d121d;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+}
