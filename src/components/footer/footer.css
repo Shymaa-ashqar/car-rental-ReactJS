@@ -11,7 +11,7 @@
   text-align: center;
 }
 .contactus-footer p {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 .contactus-footer h3 {
   color: #0aa5cd;
@@ -20,9 +20,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  text-align: center;
 }
 .social-footer h3 {
   color: #0aa5cd;
+  text-align: center;
 }
 .social-footer ul .social {
   color: white;

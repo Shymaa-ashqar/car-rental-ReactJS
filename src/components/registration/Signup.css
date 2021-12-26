@@ -7,21 +7,25 @@
     url("../../../public/page-header-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-
+  padding-bottom: 2em;
   font-family: "Numans", sans-serif;
+  width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Register-container {
   display: flex;
-  justify-content: flex-start;
-  padding-top: 6em;
+  justify-content: center;
+  padding-top: 1em;
   padding-left: 2em;
-  height: 100%;
+
   align-content: center;
 }
 
 .card2 {
-  height: 600px;
+  /* height: 600px; */
   border-radius: 55px;
   width: 500px;
   background-color: rgba(0, 0, 0, 0.5) !important;
@@ -30,30 +34,38 @@
 .card-header h3 {
   padding: 1em;
 }
-
+.card-body h3 {
+  color: #0aa5cd;
+  padding: 1em;
+}
 .input-group-prepend span {
   width: 50px;
   background-color: #0aa5cd;
   color: white;
   border: 0 !important;
-  border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%;
+  /* border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%; */
 }
-
+.reg {
+  display: flex !important  ;
+  flex-direction: column !important;
+  align-items: center;
+}
+.reg .card-footer a {
+  margin: auto 0.3em;
+}
 input:focus {
   outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
 }
 
-.login_btn {
+.sign_btn1 {
   color: white;
   background-color: #192032 !important;
-  width: 100px;
-  /* border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%; */
+  border-radius: 10px;
+  padding: 1em 2em;
 }
 
-.login_btn:hover {
-  color: white;
-  background-color: white;
+.sign_btn1:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -72,59 +84,87 @@ input:focus {
   font-size: 1em;
 }
 .errorMsg {
-  color: red;
-  font-size: 15px;
+  color: rgb(185, 35, 35);
+  font-size: 12px;
   padding: 1em;
-  /* margin-bottom: 1em;
-  padding-bottom: 1em; */
 
   width: 20em;
 }
-.form-control:invalid {
-  border-color: red;
+#card-footer {
+  padding: 0em;
 }
-.form-control:invalid ~ .errorMsg {
-  display: block;
+
+.form-control1 {
+  width: 80%;
 }
-.form-control {
-  width: 20em !important;
+@media only screen and (max-width: 800px) {
+  .Register {
+    background-image: linear-gradient(
+        rgba(81, 192, 243, 0.5),
+        rgb(255, 255, 255, 0.63)
+      ),
+      url("../../../public/page-header-bg - Cop1y.jpg");
+  }
+  .form-control1 {
+    /* width: 22em; */
+  }
 }
-.error {
-  display: flex;
-  flex-direction: column;
-}
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 585px) {
+  .form-control1 {
+    width: 80%;
+  }
   .Register-container {
     display: flex;
     justify-content: center;
   }
   .card2 {
-    width: 25em;
-    padding-left: 2em;
-    margin-left: 2em;
+    margin-right: 2em;
   }
 }
 @media only screen and (max-width: 480px) {
+  .form-control1 {
+    width: 80%;
+  }
   .card2 {
     width: 20em;
     padding-left: 1em;
-    margin-left: 1em;
+    margin-right: 2em;
+    height: fit-content;
   }
 }
 @media only screen and (max-width: 350px) {
+  .form-control1 {
+    width: 65%;
+  }
   .card2 {
-    width: 15em;
-    height: 35em;
+    width: 18em;
+    height: 40em;
     padding-left: 1em;
-    margin-left: 1em;
+    margin-right: 2em;
+  }
+  .reg .card-footer a {
+    margin: auto 0.1em;
+  }
+  .card-footer .links {
+    display: block !important;
   }
 }
 @media only screen and (max-width: 285px) {
-  .card2 {
-    width: 13em;
+  .form-control1 {
+    /* width: 6em; */
+    font-size: 0.75em;
   }
-  .Register-container {
-    display: flex;
-    justify-content: flex-start;
+  .card2 {
+    width: 15em;
+    height: 34em;
+  }
+
+  .card-header h3 {
+    padding: 0.4em;
+    margin: 0em;
+  }
+
+  #card-footer {
+    font-size: 0.7em;
   }
 }
