@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 function Signup({ setSubmitted }) {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
-  // const [isSubmit, setIsSubmit] = useState(false);
+
   const [Isvalidate, setIsvalidate] = useState(false);
-  //   console.log(isSubmit);
+
   const [formGroup, setFormGrroup] = useState({
     firstName: "",
     lastName: "",
@@ -21,12 +21,7 @@ function Signup({ setSubmitted }) {
     const { name, value } = e.target;
     setFormGrroup({ ...formGroup, [name]: value });
   };
-  //   useEffect(() => {
-  //     console.log(formErrors);
-  //     if (Object.keys(formErrors).length === 0 && isSubmit) {
-  //       console.log(formGroup);
-  //     }
-  //   }, [formErrors]);
+
   const validate = (values) => {
     console.log("hanee");
     const errors = {};
@@ -83,30 +78,24 @@ function Signup({ setSubmitted }) {
       if (flag === true && Isvalidate === true) {
         arr.push(users);
         localStorage.setItem("users", JSON.stringify(arr));
-        // setIsSubmit(!isSubmit);
+
         setSubmitted(true);
         navigate("/");
       }
     } else if (Isvalidate === true) {
       arr.push(users);
-      //   setIsSubmit(!isSubmit);
+
       localStorage.setItem("users", JSON.stringify(arr));
     }
   };
   return (
     <section className="Register" id="Register">
-      {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div className="ui message success">Signed in successfully</div>
-      ) : (
-        <pre>{JSON.stringify(formGroup, undefined, 2)}</pre>
-      )} */}
       <div className="Register-container">
         <div className="d-flex justify-content-center h-100">
           <div className="card2">
-            <div className="card-header">
-              <h3>Sign Up</h3>
-            </div>
+            {/* <div className="card-header"></div> */}
             <div className="card-body">
+              <h3>Sign Up</h3>
               <form onSubmit={reg} id="form">
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
@@ -117,19 +106,12 @@ function Signup({ setSubmitted }) {
                   <input
                     id="firstName"
                     type="text"
-                    className="form-control"
+                    className="form-control1"
                     placeholder="First Name"
                     name="firstName"
                     value={formGroup.firstName}
                     onChange={register}
                   />
-
-                  {/* {isSubmit == true &&
-                  formGroup.firstName.length >= 2 ? null : (
-                    <small className="errorMsg">
-                      "the userName must be more than 2"
-                    </small>
-                  )} */}
                 </div>{" "}
                 <small className="errorMsg">{formErrors.firstName}</small>
                 <div className="input-group form-group">
@@ -141,7 +123,7 @@ function Signup({ setSubmitted }) {
                   <input
                     id="lastName"
                     type="text"
-                    className="form-control"
+                    className="form-control1"
                     placeholder="Last Name"
                     name="lastName"
                     value={formGroup.lastName}
@@ -160,7 +142,7 @@ function Signup({ setSubmitted }) {
                     id="userEmail"
                     type="email"
                     required
-                    className="form-control"
+                    className="form-control1"
                     placeholder="Email"
                     value={formGroup.email}
                     name="email"
@@ -177,7 +159,7 @@ function Signup({ setSubmitted }) {
                   <input
                     id="userPassword"
                     type="password"
-                    className="form-control"
+                    className="form-control1"
                     placeholder="password"
                     name="password"
                     value={formGroup.password}
@@ -196,7 +178,7 @@ function Signup({ setSubmitted }) {
                   <input
                     id="userRePassword"
                     type="password"
-                    className="form-control"
+                    className="form-control1"
                     placeholder="Repet Password"
                     name="confPassword"
                     value={formGroup.confPassword}
@@ -205,19 +187,21 @@ function Signup({ setSubmitted }) {
                   />{" "}
                 </div>
                 <small className="errorMsg">{formErrors.confPassword}</small>
-                <div className="form-group">
-                  <input
-                    type="submit"
-                    value="Login"
-                    className="btn float-right login_btn"
-                  />
+                <div className="reg">
+                  <div className="form-group">
+                    <input
+                      type="submit"
+                      value="Sign Up"
+                      className="btn float-right sign_btn1"
+                    />
+                  </div>
+                  <div className="card-footer" id="card-footer">
+                    <div className="d-flex justify-content-center links">
+                      Already have an account?<Link to="/Login"> Sign in</Link>
+                    </div>
+                  </div>
                 </div>
               </form>
-            </div>
-            <div className="card-footer">
-              <div className="d-flex justify-content-center links">
-                Already have an account?<Link to="/Login"> Sign in</Link>
-              </div>
             </div>
           </div>
         </div>

@@ -132,3 +132,11 @@ nav ul li a:hover {
     display: none;
   }
 }
+@media screen and (max-width: 520px) {
+  .burger-menu {
+    display: block;
+    margin-left: 8em;
+    border: none;
+    background: none;
+  }
+}
