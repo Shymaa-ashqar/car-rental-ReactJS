@@ -10,45 +10,78 @@ const Landingpage = () => {
   return (
     <div>
       <div className="ladingpage-slider">
-        <div className="ladingpage-slider-container-btn">
-          <p>Make Your Life Easy</p>
-          <Link to="/">
-            <button>RENT NOW</button>
-          </Link>
-        </div>
         <div
           id="carouselExampleControls"
-          class="carousel slide"
+          className="carousel slide"
           data-ride="carousel"
         >
-          <div class="carousel-inner  ">
-            <div class="carousel-item active" data-interval="500">
-              <img class="d-block w-100  " src="./car1.jpg" alt="car one" />
+          <div className="carousel-inner  ">
+            <div
+              className="carousel-item carousel-item-img1 active"
+              data-interval="500"
+            >
+              <div className="ladingpage-slider-container-btn">
+                <p>Make Your Life Easy</p>
+                <div>
+                  <Link to="/listingcars">
+                    <button>RENT NOW</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="image-layer-overlay"></div>
             </div>
-            <div class="carousel-item" data-interval="500">
-              <img class="d-block w-100" src="./car2.jpg" alt="car two" />
+            <div
+              className="carousel-item carousel-item-img2 "
+              data-interval="500"
+            >
+              <div className="ladingpage-slider-container-btn">
+                <p>Make Your Life Easy</p>
+                <div>
+                  <Link to="/listingcars">
+                    <button>RENT NOW</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="image-layer-overlay"></div>
             </div>
-            <div class="carousel-item" data-interval="500">
-              <img class="d-block w-100" src="./car3.jpg" alt="car three" />
+            <div
+              className="carousel-item carousel-item-img3 "
+              data-interval="500"
+            >
+              <div className="ladingpage-slider-container-btn">
+                <p>Make Your Life Easy</p>
+                <div>
+                  <Link to="/listingcars">
+                    <button>RENT NOW</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="image-layer-overlay"></div>
             </div>
           </div>
           <a
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             href="#carouselExampleControls"
             role="button"
             data-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Previous</span>
           </a>
           <a
-            class="carousel-control-next"
+            className="carousel-control-next"
             href="#carouselExampleControls"
             role="button"
             data-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Next</span>
           </a>
         </div>
       </div>

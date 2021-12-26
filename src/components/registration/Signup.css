@@ -116,12 +116,7 @@ input:focus {
     display: flex;
     justify-content: center;
   }
-  .card2 {
-    /* width: 25em; */
-    /* padding-left: 2em;
-    margin-left: 2em;
-  } */
-  }
+
 }
 @media only screen and (max-width: 480px) {
   .form-control1 {

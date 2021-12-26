@@ -4,7 +4,19 @@ border:0;
 box-sizing: border-box;
 
 }
+.contactForm{
+background-color: #E9EDF2;
+border-radius: 1em;
+justify-content: center;
+text-align: center;
+/* margin-top: 2em; */
+padding: 0.5em;
+width:70%;
 
+}
+.contactForm p{
+color: black;
+}
 #contactDetails{
    display: flex;
    flex-direction: column;
@@ -12,26 +24,31 @@ box-sizing: border-box;
    padding: 2em;
 }
 .contactDetails a{
-    color: #0AA5CD;
+    color:#192032;
+    font-weight: bolder;
     padding: 1em;
     margin: 2em;
     text-decoration: none;
-    
+
 }
 .contactDetails a:hover{
-color:#254b55 ;
+color:#0AA5CD;
 }
 
 .contactWrapper{
-   border:1px darkgrey solid;
+    /* background-image: url("car5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+   border:1px darkgrey solid; */
    display: grid;
    grid-template-columns: 1fr 1fr;
    margin: 2em;
    padding: 2em;
   justify-items: center;
-  background-color: #E9EDF2;
+  /* background-color: #E9EDF2;
   border-radius: 1em;
-  
+   */
    
 }
 
@@ -41,32 +58,28 @@ color:#254b55 ;
     width: 80%;
     border: 1px solid grey;
     padding: 0.5em;
-    margin: 1em;
+    margin: 2em;
     border-radius: 0.5em;
-  
-
 }
 
-.contactForm{
-    margin-top: 2em;
-    padding: 1em;
-   
-}
+
 .contactSubmit{
   text-align: center;
   padding: 1em;
-  margin-left: 4em;
+  margin-right: 1.5em;
   border-radius: 0.5rem;
-  background-color: #0AA5CD;
+  background-color: #192032;
   color: white;
+  font-weight: bold;
+  /* width: 25%; */
 }
 .contactSubmit:hover{
-    background-color: #254b55;
+    background-color: #0AA5CD;
     color: white;
     cursor: pointer;
 }
  
-#contSpan{
+#contSpan {
 color:#0AA5CD ;
 text-decoration: none;
 font-weight: bold;
@@ -75,6 +88,42 @@ font-weight: bold;
 
 .contactWrapper h2{
     text-align: center;
+    color: black;
+    margin: 0.5em;
     
+}
+
+.errorMessage1{
+    color: red;
+}
+@media only screen and (max-width: 530px) {
+    .contactDetails a{
+        font-size: 0.5em;
+        padding: 0.5em;
+        margin: 0.5em;
+    
+    }
+    .contactWrapper{
+        margin: 0;
+       padding:0%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .contactSubmit{
+       
+    }
+
+}
+@media only screen and (max-width: 410px){
+
+    .contactWrapper h2{
+        font-size: 1em;
+    }
+    .contactWrapper{
+        border: none;
+        display: flex;
+        flex-direction: column;
+    }
 
 }

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function Signup({ setSubmitted }) {
+function Signup({ setSubmitted, setLogged }) {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
 
@@ -21,9 +21,11 @@ function Signup({ setSubmitted }) {
     const { name, value } = e.target;
     setFormGrroup({ ...formGroup, [name]: value });
   };
+    
+  let isValidate;
+  const validate = (e, values) => {
+    e.preventDefault();
 
-  const validate = (values) => {
-    console.log("hanee");
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (values.firstName.length <= 2) {
@@ -35,26 +37,29 @@ function Signup({ setSubmitted }) {
     if (!regex.test(values.email)) {
       errors.email = "This is not a valid email format!";
     }
-    if (values.password.length < 8) {
+    if (values.password.length <= 8) {
       errors.password = "Password must be more than 8 characters";
     }
     if (values.confPassword !== values.password) {
       errors.confPassword = "Password is not match";
-    } else if (
+    }
+    setFormErrors(errors);
+    if (
       values.firstName.length > 2 &&
       values.lastName.length > 2 &&
       regex.test(values.email) &&
       values.password.length > 8 &&
       values.confPassword === values.password
     ) {
-      setIsvalidate(true);
+      console.log("test");
+      isValidate = true;
+      reg(e, errors);
     }
-    return errors;
   };
 
-  const reg = (e) => {
+  const reg = (e, errors) => {
     e.preventDefault();
-    setFormErrors(validate(formGroup));
+    console.log(errors);
     let users = {
       fName: formGroup.firstName,
       lName: formGroup.lastName,
@@ -65,7 +70,7 @@ function Signup({ setSubmitted }) {
 
     console.log(users);
     let flag = true;
-    if (localStorage.length !== 0) {
+    if (localStorage.getItem("users")) {
       arr = JSON.parse(localStorage.getItem("users"));
       for (let i = 0; i < arr.length; i++) {
         if (arr[i].email === formGroup.email) {
@@ -75,17 +80,21 @@ function Signup({ setSubmitted }) {
           return (flag = false);
         }
       }
-      if (flag === true && Isvalidate === true) {
+      if (flag === true && isValidate === true) {
         arr.push(users);
         localStorage.setItem("users", JSON.stringify(arr));
 
         setSubmitted(true);
-        navigate("/");
+        setLogged(true);
+        navigate("/Login");
       }
-    } else if (Isvalidate === true) {
+    } else if (isValidate === true) {
       arr.push(users);
 
       localStorage.setItem("users", JSON.stringify(arr));
+      setSubmitted(true);
+      setLogged(true);
+      navigate("/Login");
     }
   };
   return (
@@ -93,10 +102,11 @@ function Signup({ setSubmitted }) {
       <div className="Register-container">
         <div className="d-flex justify-content-center h-100">
           <div className="card2">
-            {/* <div className="card-header"></div> */}
-            <div className="card-body">
-              <h3>Sign Up</h3>
-              <form onSubmit={reg} id="form">
+         
+                      <div className="card-body">
+                          <h3>Sign Up </h3>
+                         
+              <form onSubmit={(e) => validate(e, formGroup)} id="form">
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text">
@@ -165,7 +175,7 @@ function Signup({ setSubmitted }) {
                     value={formGroup.password}
                     onChange={register}
                     required
-                    // pattern="^[A-Za-z0-9]{9,16}$"
+                    
                   />{" "}
                 </div>{" "}
                 <small className="errorMsg">{formErrors.password}</small>

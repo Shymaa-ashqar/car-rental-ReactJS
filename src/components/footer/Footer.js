@@ -14,18 +14,18 @@ function Footer() {
         <h3>Follow Us</h3>
         <ul>
           <Link to="#">
-            <i class="social fa-brands fa-facebook"></i>
+            <i className="social fa-brands fa-facebook"></i>
           </Link>
           <Link to="#">
-            <i class="social fa-brands fa-instagram"></i>
+            <i className="social fa-brands fa-instagram"></i>
           </Link>
           <Link to="#">
-            <i class="social fa-brands fa-twitter"></i>
+            <i className="social fa-brands fa-twitter"></i>
           </Link>
         </ul>
       </div>
       <div className="copyright-footer">
-        <p>&copy; 2022 Tawseelih . All Rights Reserved</p>
+        <p>&copy; 2022 Car-Rent . All Rights Reserved</p>
       </div>
     </div>
   );

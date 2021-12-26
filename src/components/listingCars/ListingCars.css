@@ -14,17 +14,17 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 .Car-list-container .cars {
-  background-color: #f9fbfd;
+  background-color: #f0f4f5;
 }
 .Car-list-container .search-sort input,
 .Car-list-container .search-sort select {
   padding: 5px 10px !important;
   border: rgb(172, 171, 171) 1px solid;
-  color: #0aa5cd;
+  color: gray;
   border-radius: 0.3em;
 }
 .Car-list-container .search-sort input::placeholder {
-  color: #0aa5cd;
+  color: gray;
 }
 .search-sort {
   display: flex;
@@ -37,15 +37,21 @@
 }
 .car-item .car-container {
   display: flex;
-  padding: 1em 0;
+  margin: 1em 0;
   flex-direction: row;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
 .car-item .car-container img {
   width: 100%;
+  height: 15em;
 }
 .car-container .text {
   background-color: white;
   padding: 2em;
+  width: 35vw;
+  height: 15em;
+  overflow: hidden;
 }
 .car-container .text h3 {
   font-size: 1.2em;
@@ -73,12 +79,31 @@
   border: 1px solid #0aa5cd;
   color: #0aa5cd;
 }
+.car-item .info {
+  margin-top: 2em;
+}
+.car-item .info i {
+  color: #0aa5cd;
+}
+.car-item .info span {
+  color: rgb(145, 144, 144);
+  padding-right: 0.5em;
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+}
 @media screen and (max-width: 640px) {
   .car-item .car-container {
     flex-direction: column !important;
-    padding: 1em;
+    box-shadow: none !important;
+    overflow: hidden;
+  }
+  .car-item .car-container img {
+    padding: 0 1em;
   }
   .search-sort {
     flex-direction: column !important;
+  }
+  .car-container .text {
+    width: 100vw;
   }
 }

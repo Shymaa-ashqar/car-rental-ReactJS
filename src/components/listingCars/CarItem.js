@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function CarItem(props) {
   let navigate = useNavigate();
-
+  let logged = localStorage.getItem("logged_user");
   return (
     <div className="car-item">
       <div className="car-container">
@@ -20,12 +20,26 @@ function CarItem(props) {
           </p>
           <button
             className="btn"
-            onClick={() => {
-              navigate(`/bookingForm/${props.carsData.id}`);
+            onClick={() => {logged?
+              navigate(`/bookingForm/${props.carsData.id}`):
+              (sessionStorage.setItem("from","listing")||
+              navigate('/Login'))
             }}
           >
             Book Now
           </button>
+          <div className="info">
+            <i class="fas fa-caret-right "></i>
+            <span> 2 Seats</span>
+            <i class="fas fa-caret-right "></i>
+            <span> 2 Bags</span>
+            <i class="fas fa-caret-right "></i>
+            <span> Airbags</span>
+            <i class="fas fa-caret-right"></i>
+            <span> Manual/Auto</span>
+            <i class="fas fa-caret-right "></i>
+            <span> AC</span>
+          </div>
         </div>
       </div>
     </div>

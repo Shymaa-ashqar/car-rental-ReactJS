@@ -1,0 +1,53 @@
+.car-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4em auto;
+  width: fit-content;
+  position: relative;
+  padding: 5em;
+  background-color: white;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+}
+.car-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+.car-form-container input[type="text"],
+.car-form-container input[type="email"],
+.car-form-container input[type="tel"],
+.car-form-container input[type="date"],
+.car-form-container input[type="time"] {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+.car-form-container input[type="submit"] {
+  border: none;
+  outline: none !important;
+  background-color: #0aa5cd;
+  color: white;
+  font-size: 14px;
+  padding: 5px 12px;
+  transition: 500ms;
+  border-radius: 5px;
+}
+.car-form-container input[type="submit"]:hover {
+  background-color: white;
+  border: 1px solid #0aa5cd;
+  color: #0aa5cd;
+  cursor: pointer;
+}
+.car-form-container .texts {
+  display: flex;
+  justify-content: space-around;
+}
+.register-label {
+  padding-top: 2em;
+  font-size: 1.2em !important;
+  color: brown;
+}

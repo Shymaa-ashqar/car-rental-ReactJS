@@ -1,74 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
-function Navbar({ submitted, logged, setLogged, setSubmitted }) {
+function Header({ submitted, setSubmitted, logged, setLogged }) {
   const [showNav, setShowNav] = useState(false);
+
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="logo-nav">
         <Link to="/">
-          {" "}
-          <img src="./car-rent-logo.png" alt="logo" />
+          <img src="/car-rent-logo.png" alt="logo" />
         </Link>
         <button className="burger-menu" onClick={() => setShowNav(!showNav)}>
           <i className="fas fa-bars"></i>
         </button>
       </div>
-
       <div className="nav-options">
         <ul id={showNav ? "hidden" : null}>
           <li>
             {" "}
-            <Link to="/">Home</Link>
+            <Link to="/">HOME</Link>
           </li>
           <li>
             {" "}
-            <Link to="/aboutus">About Us</Link>
+            <Link to="/aboutus">ABOUT US</Link>
           </li>
           <li>
             {" "}
-            <Link to="/listingcars">Listing Cars</Link>
+            <Link to="/listingcars">LISTING CARS</Link>
           </li>
           <li>
             {" "}
-            <Link to="/contactus">Contact Us</Link>
+            <Link to="/contactus">CONTACT US</Link>
           </li>
         </ul>
       </div>
 
       <div className="register-btn">
-        <ul>
+        <ul id={showNav ? "hiddenbtn" : null}>
           <li>
-            {!logged ? (
+            {!logged && (
               <Link to="/login">
-                <button className="login-btn">Login</button>
+                <button className="login-btn-header">Login</button>
               </Link>
-            ) : (
-              <Link to="/">
+            )}
+          </li>
+          <li>
+            {logged || submitted ? (
+              <Link to="/login">
                 <button
-                  className="login-btn"
+                  className="logout-btn-header"
                   onClick={() => {
-                    setLogged(false);
                     setSubmitted(false);
+                    setLogged(false);
+                    localStorage.removeItem("logged_user");
+                    sessionStorage.removeItem("from");
                   }}
                 >
                   Logout
                 </button>
               </Link>
-            )}
+            ) : null}
           </li>
           <li>
-            {!submitted ? (
-              <Link to="/Signup">
-                <button className="signup-btn">Signup</button>
+            {!submitted && (
+              <Link to="/signup">
+                {" "}
+                <button className="signup-btn-header">Signup</button>
               </Link>
-            ) : null}
+            )}
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 
-export default Navbar;
+export default Header;

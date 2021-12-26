@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
-function Login({ setLogged }) {
+function Login({ setLogged, setSubmitted }) {
   const navigate = useNavigate();
 
   const [formGroup, setFormGrroup] = useState({
@@ -30,7 +30,19 @@ function Login({ setLogged }) {
         index = i;
         localStorage.setItem("logged_user", JSON.stringify(Userss[index]));
         setLogged(true);
-        navigate("/");
+        setSubmitted(true);
+        switch (sessionStorage.getItem("from")) {
+          case "call": {
+            navigate("/contactus");
+            break;
+          }
+          case "listing": {
+            navigate("/listingcars");
+            break;
+          }
+          default:
+            navigate("/");
+        }
 
         return (flag = false);
       }
@@ -44,9 +56,6 @@ function Login({ setLogged }) {
     <div className="logIn">
       <div className="d-flex justify-content-center h-100">
         <div className="card1">
-          {/* <div className="card-header">
-           
-          </div> */}
           <div className="card-body">
             <h3>Sign In</h3>
             <form onSubmit={onSubmit}>
