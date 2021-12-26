@@ -25,7 +25,7 @@ function Footer() {
         </ul>
       </div>
       <div className="copyright-footer">
-        <p>&copy; 2022 Tawseelih . All Rights Reserved</p>
+        <p>&copy; 2022 Car-Rent . All Rights Reserved</p>
       </div>
     </div>
   );
