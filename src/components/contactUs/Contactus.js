@@ -58,6 +58,32 @@ function ContactUs() {
   return (
     <>
       <div className="contactWrapper">
+      <div className="contactDetails">
+          <h3>Don't Hesitate to connect with us</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+          <ul id="contactDetails">
+            <a href="#" class="fas fa-phone-alt">
+              {" "}
+              +962798452640
+            </a>
+            <a
+              href="https://maps.google.com"
+              targrt="_blank"
+              class="fas fa-map-marker-alt"
+            >
+              {" "}
+              Our location
+            </a>
+            <a
+              href="https://www.google.com"
+              target="_blank"
+              class="fas fa-envelope"
+            >
+              {" "}
+              Email
+            </a>
+          </ul>
+        </div>
         <div className="contactForm">
           <h2>Contact Us</h2>
           {!localStorage.getItem("logged_user")&&
@@ -156,30 +182,7 @@ function ContactUs() {
             <button className="contactSubmit">Submit</button>
           </form>{" "}
         </div>
-        <div className="contactDetails">
-          <ul id="contactDetails">
-            <a href="#" class="fas fa-phone-alt">
-              {" "}
-              +962798452640
-            </a>
-            <a
-              href="https://maps.google.com"
-              targrt="_blank"
-              class="fas fa-map-marker-alt"
-            >
-              {" "}
-              Our location
-            </a>
-            <a
-              href="https://www.google.com"
-              target="_blank"
-              class="fas fa-envelope"
-            >
-              {" "}
-              Email
-            </a>
-          </ul>
-        </div>
+        
       </div>
     </>
   );

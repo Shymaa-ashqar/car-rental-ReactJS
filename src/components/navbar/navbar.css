@@ -160,7 +160,7 @@ nav ul li a:hover {
   }
   .burger-menu {
     display: block;
-    margin-left: 13em;
+    margin-left: 8em;
     border: none;
     background: none;
   }
@@ -189,5 +189,6 @@ nav ul li a:hover {
   }
   .register-btn #hiddenbtn {
     display: flex;
+    flex-direction: column;
   }
 }

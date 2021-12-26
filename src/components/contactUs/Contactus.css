@@ -5,17 +5,28 @@ box-sizing: border-box;
 
 }
 .contactForm{
-background-color: #E9EDF2;
-border-radius: 1em;
-justify-content: center;
-text-align: center;
-/* margin-top: 2em; */
-padding: 0.5em;
-width:70%;
+    background-color: #E9EDF2;
+    border-radius: 1em;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5em;
+    width: 90%;
+    /* margin-right: 3em; */
+    /* margin-left: 1em; */
+    margin: 0 auto;
 
+
+}
+.contactDetails h3{
+    color:#0AA5CD;
+}
+.contactDetails p,h3{
+margin: 0.5em;
+text-align: justify;
 }
 .contactForm p{
 color: black;
+
 }
 #contactDetails{
    display: flex;
@@ -26,8 +37,8 @@ color: black;
 .contactDetails a{
     color:#192032;
     font-weight: bolder;
-    padding: 1em;
-    margin: 2em;
+    padding: 0.5em;
+    margin: 1em;
     text-decoration: none;
 
 }
@@ -36,31 +47,28 @@ color:#0AA5CD;
 }
 
 .contactWrapper{
-    /* background-image: url("car5.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-   
-   border:1px darkgrey solid; */
+    
    display: grid;
    grid-template-columns: 1fr 1fr;
    margin: 2em;
    padding: 2em;
   justify-items: center;
-  /* background-color: #E9EDF2;
-  border-radius: 1em;
-   */
+  
    
 }
 
 .contactInput{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    /* justify-content: center; */
+    /* width: 80%; */
     border: 1px solid grey;
     padding: 0.5em;
-    margin: 2em;
+    margin: 2em auto;
     border-radius: 0.5em;
+   
 }
+
 
 
 .contactSubmit{
@@ -88,7 +96,7 @@ font-weight: bold;
 
 .contactWrapper h2{
     text-align: center;
-    color: black;
+    color: #0AA5CD;
     margin: 0.5em;
     
 }
@@ -110,9 +118,7 @@ font-weight: bold;
         flex-direction: column;
         width: 100%;
     }
-    .contactSubmit{
-       
-    }
+    
 
 }
 @media only screen and (max-width: 410px){
@@ -124,6 +130,8 @@ font-weight: bold;
         border: none;
         display: flex;
         flex-direction: column;
+        padding-bottom: 3em;
     }
+
 
 }
