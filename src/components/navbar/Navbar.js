@@ -54,6 +54,7 @@ function Header({ submitted, setSubmitted, logged, setLogged }) {
                     setSubmitted(false);
                     setLogged(false);
                     localStorage.removeItem("logged_user");
+                    sessionStorage.removeItem("from");
                   }}
                 >
                   Logout

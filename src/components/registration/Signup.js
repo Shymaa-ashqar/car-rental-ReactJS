@@ -42,7 +42,7 @@ function Signup({ setSubmitted, setLogged }) {
     if (!regex.test(values.email)) {
       errors.email = "This is not a valid email format!";
     }
-    if (values.password.length < 8) {
+    if (values.password.length <= 8) {
       errors.password = "Password must be more than 8 characters";
     }
     if (values.confPassword !== values.password) {
@@ -56,6 +56,7 @@ function Signup({ setSubmitted, setLogged }) {
       values.password.length > 8 &&
       values.confPassword === values.password
     ) {
+      console.log("test");
       isValidate = true;
       reg(e, errors);
     }
@@ -90,7 +91,7 @@ function Signup({ setSubmitted, setLogged }) {
         // setIsSubmit(!isSubmit);
         setSubmitted(true);
         setLogged(true);
-        navigate("/");
+        navigate("/Login");
       }
     } else if (isValidate === true) {
       arr.push(users);
@@ -98,7 +99,7 @@ function Signup({ setSubmitted, setLogged }) {
       localStorage.setItem("users", JSON.stringify(arr));
       setSubmitted(true);
       setLogged(true);
-      navigate("/");
+      navigate("/Login");
     }
   };
   return (
