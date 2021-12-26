@@ -99,6 +99,12 @@ nav ul li a:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
+@media screen and (max-width: 1024px) {
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 @media screen and (max-width: 768px) {
   .navbar {
     display: flex;
@@ -146,6 +152,14 @@ nav ul li a:hover {
   }
 }
 
+@media screen and (max-width: 540px) {
+  .burger-menu {
+    display: block;
+    margin-left: 13em;
+    border: none;
+    background: none;
+  }
+}
 @media screen and (max-width: 480px) {
   .navbar {
     display: flex;
@@ -160,7 +174,7 @@ nav ul li a:hover {
   }
   .burger-menu {
     display: block;
-    margin-left: 13em;
+    margin-left: 8em;
     border: none;
     background: none;
   }
@@ -189,5 +203,14 @@ nav ul li a:hover {
   }
   .register-btn #hiddenbtn {
     display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 520px) {
+  .burger-menu {
+    display: block;
+    margin-left: 8em;
+    border: none;
+    background: none;
   }
 }
