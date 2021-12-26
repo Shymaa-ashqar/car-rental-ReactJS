@@ -10,12 +10,15 @@
   padding-bottom: 2em;
   font-family: "Numans", sans-serif;
   width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Register-container {
   display: flex;
   justify-content: center;
-  padding-top: 6em;
+  padding-top: 1em;
   padding-left: 2em;
 
   align-content: center;
@@ -59,12 +62,10 @@ input:focus {
   color: white;
   background-color: #192032 !important;
   border-radius: 10px;
-  /* border-radius: 26% 74% 27% 73% / 0% 100% 0% 100%; */
+  padding: 1em 2em;
 }
 
 .sign_btn1:hover {
-  color: white;
-  background-color: white;
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -94,7 +95,7 @@ input:focus {
 }
 
 .form-control1 {
-  width: 85%;
+  width: 80%;
 }
 @media only screen and (max-width: 800px) {
   .Register {
@@ -110,17 +111,19 @@ input:focus {
 }
 @media only screen and (max-width: 585px) {
   .form-control1 {
-    width: 85%;
+    width: 80%;
   }
   .Register-container {
     display: flex;
     justify-content: center;
   }
-
+  .card2 {
+    margin-right: 2em;
+  }
 }
 @media only screen and (max-width: 480px) {
   .form-control1 {
-    width: 81%;
+    width: 80%;
   }
   .card2 {
     width: 20em;
