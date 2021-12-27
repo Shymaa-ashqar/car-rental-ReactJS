@@ -4,7 +4,6 @@ import "./popup.css";
 const Popup = (props) => {
   const navigate = useNavigate();
   const handleSubmit = () => {
-    console.log(props.test);
     let lclArr = JSON.parse(localStorage.getItem("reservations"));
     lclArr.push(props.test);
     localStorage.setItem("reservations", JSON.stringify(lclArr));
