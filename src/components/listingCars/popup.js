@@ -14,7 +14,7 @@ const Popup = (props) => {
     <div className="popup-box">
       <div className="box">
         <div className="box-title">
-          <h3>Are you sure? </h3>
+          <h3>Are you sure ? </h3>
         </div>
         <div className="box-illustrate">
           <h6>

@@ -60,12 +60,42 @@ h6 {
   margin: 2em auto;
   padding-bottom: 0.5em;
 }
+@media screen and (max-width: 768px) {
+  .ourteam-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .ourteam-listing img {
+    width: 30em;
+  }
+  .ourteam-body2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 540px) {
+  .aboutus-about-section img {
+    width: 15em;
+    border-radius: 10px;
+    padding: 1em;
+  }
+  .aboutus-text {
+    width: 60%;
+    padding: 0.5em;
+  }
+  .ourteam-listing img {
+    width: 18em;
+  }
+}
 @media screen and (max-width: 420px) {
   .aboutus-about-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .ourteam .ourteam-title {
+    width: 60%;
   }
   .aboutus-text {
     width: 80%;
@@ -75,6 +105,14 @@ h6 {
     width: 18em;
     border-radius: 10px;
     margin-bottom: 1em;
+  }
+  .ourteam-listing img {
+    width: 20em;
+  }
+  .ourteam-listing h3,
+  h6 {
+    text-align: center;
+    font-size: 1.5rem;
   }
   .ourteam-body {
     display: flex;

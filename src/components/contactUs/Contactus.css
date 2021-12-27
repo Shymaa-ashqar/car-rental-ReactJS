@@ -112,7 +112,7 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 412px) {
   .contactWrapper h2 {
     font-size: 1em;
   }
@@ -124,5 +124,8 @@
   }
   .contactDetails {
     display: flex;
+  }
+  .contactDetails ul {
+    padding: 0 !important;
   }
 }

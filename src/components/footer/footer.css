@@ -1,20 +1,77 @@
 .footer {
   display: flex;
-  background-color: black;
+  flex-direction: column;
+  gap: 1em;
+  background-color: #172333;
   color: white;
-  justify-content: space-around;
   text-align: center;
   padding: 1em;
 }
-
+.footer-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footer-about {
+  width: 33%;
+  text-align: initial;
+  margin-bottom: 2em;
+}
+.footer-about img {
+  width: 6em;
+  padding: 1em 0;
+}
+.footer .footer-signup-btn {
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #0aa5cd;
+  cursor: pointer;
+}
+.footer .footer-signup-btn:hover {
+  background-color: white;
+  color: #0aa5cd;
+}
 .contactus-footer {
   text-align: center;
+  width: 30%;
+  padding: 1em 0;
+}
+.contactus-footer .fa-phone-alt,
+.fa-envelope,
+.fa-map-marker-alt {
+  color: #0aa5cd;
+  padding-right: 0.5em;
+  font-size: 1.2rem;
 }
 .contactus-footer p {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 .contactus-footer h3 {
   color: #0aa5cd;
+  padding-bottom: 1em;
+}
+.footer-top-right {
+  width: 30%;
+  text-align: center;
+  padding: 1em 0;
+}
+.footer-top-right h3 {
+  padding-bottom: 1em;
+  color: #0aa5cd;
+}
+.footer-top-right button {
+  color: black;
+  text-decoration: none;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
 }
 .social-footer {
   display: flex;
@@ -43,5 +100,22 @@
   .footer {
     display: flex;
     flex-direction: column;
+  }
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-about {
+    width: 90%;
+    text-align: center;
+  }
+  .contactus-footer {
+    text-align: center;
+    width: 90%;
+    padding: 1em 0;
+  }
+  .footer-top-right {
+    width: 90%;
+    text-align: center;
+    padding: 1em 0;
   }
 }

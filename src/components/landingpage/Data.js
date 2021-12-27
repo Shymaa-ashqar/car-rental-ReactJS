@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    src: "./car1.jpg",
+    src: "./bmw2.jpg",
     title: "BMW",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },

@@ -69,7 +69,7 @@
   font-size: 1.1em;
 }
 .car-item .btn {
-  border: none;
+  border: solid #0aa5cd 1px;
   outline: none !important;
   background-color: #0aa5cd;
   color: white;

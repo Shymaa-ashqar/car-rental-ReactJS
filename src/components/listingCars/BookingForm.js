@@ -68,7 +68,7 @@ function BookingForm() {
   minEndDate.setDate(date + 7);
   let minEndString = minEndDate.toISOString();
   let minEndCut = minEndString.substring(0, 10);
-  const [valueCut2, setValueCut2] = useState(null);
+  const [valueCut2, setValueCut2] = useState(0);
 
   useEffect(() => {
     setValueCut2(minEndCut);
@@ -131,6 +131,9 @@ function BookingForm() {
                 value={userInfo.email}
                 required
                 placeholder="Email"
+                onChange={() => {
+                  return null;
+                }}
                 type="email"
                 name="email"
                 id="email"
