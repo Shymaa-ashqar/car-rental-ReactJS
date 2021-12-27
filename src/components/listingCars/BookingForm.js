@@ -171,7 +171,7 @@ function BookingForm() {
             />
             <input
               onChange={(e) => handleDateChange2(e)}
-              min={valueCut2}
+              min={minEndCut}
               value={valueCut2}
               type="date"
               name="end"
