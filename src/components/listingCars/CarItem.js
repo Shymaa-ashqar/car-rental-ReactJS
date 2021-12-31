@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function CarItem(props) {
   let navigate = useNavigate();
   let logged = localStorage.getItem("logged_user");
+  //test
   return (
     <div className="car-item">
       <div className="car-container">
