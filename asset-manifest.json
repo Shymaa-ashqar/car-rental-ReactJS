@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/car-rental-ReactJS/static/css/main.8abc04ed.css",
+    "main.js": "/car-rental-ReactJS/static/js/main.eaf2f07e.js",
+    "static/media/page-header-bg.jpg": "/car-rental-ReactJS/static/media/page-header-bg.2a89e5c2dd9f9a5eebb4.jpg",
+    "static/media/page-header-bg - Cop1y.jpg": "/car-rental-ReactJS/static/media/page-header-bg - Cop1y.f0e242f54431cb12882a.jpg",
+    "index.html": "/car-rental-ReactJS/index.html",
+    "main.8abc04ed.css.map": "/car-rental-ReactJS/static/css/main.8abc04ed.css.map",
+    "main.eaf2f07e.js.map": "/car-rental-ReactJS/static/js/main.eaf2f07e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8abc04ed.css",
+    "static/js/main.eaf2f07e.js"
+  ]
+}
